@@ -1,0 +1,26 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.VocaVerse" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#2196F3</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
+
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="fontFamily">sans-serif</item>
+    </style>
+
+    <!-- Custom Indicator cho Bottom Navigation (Hình viên thuốc) -->
+    <style name="App.CustomIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">#E3F2FD</item> <!-- Màu nền xanh nhạt cho viên thuốc -->
+        <item name="android:width">64dp</item>
+        <item name="android:height">40dp</item>
+    </style>
+
+    <!-- Overwrite the base theme for the app -->
+    <style name="Theme.DuolingoApp" parent="Theme.VocaVerse" />
+
+    <style name="Theme.VocaVerse.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+</resources>

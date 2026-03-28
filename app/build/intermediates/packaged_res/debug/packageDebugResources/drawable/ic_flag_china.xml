@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#EE1C25"/>
+        </shape>
+    </item>
+    <item android:left="10dp" android:top="10dp" android:width="40dp" android:height="40dp">
+        <bitmap android:src="@android:drawable/btn_star_big_on" android:tint="#FFFF00"/>
+    </item>
+    <item android:left="60dp" android:top="5dp" android:width="20dp" android:height="20dp">
+         <rotate android:fromDegrees="-18">
+            <bitmap android:src="@android:drawable/btn_star_big_on" android:tint="#FFFF00"/>
+        </rotate>
+    </item>
+    <item android:left="75dp" android:top="25dp" android:width="20dp" android:height="20dp">
+         <rotate android:fromDegrees="-36">
+            <bitmap android:src="@android:drawable/btn_star_big_on" android:tint="#FFFF00"/>
+        </rotate>
+    </item>
+    <item android:left="75dp" android:top="50dp" android:width="20dp" android:height="20dp">
+        <rotate android:fromDegrees="-54">
+            <bitmap android:src="@android:drawable/btn_star_big_on" android:tint="#FFFF00"/>
+        </rotate>
+    </item>
+    <item android:left="60dp" android:top="70dp" android:width="20dp" android:height="20dp">
+        <rotate android:fromDegrees="-72">
+            <bitmap android:src="@android:drawable/btn_star_big_on" android:tint="#FFFF00"/>
+        </rotate>
+    </item>
+</layer-list>
