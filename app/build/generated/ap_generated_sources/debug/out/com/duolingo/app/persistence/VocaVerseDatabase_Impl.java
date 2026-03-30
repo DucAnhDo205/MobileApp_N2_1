@@ -34,6 +34,8 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
 
   private volatile LessonDao _lessonDao;
 
+  private volatile ProgressDao _progressDao;
+
   @Override
   @NonNull
   protected SupportSQLiteOpenHelper createOpenHelper(@NonNull final DatabaseConfiguration config) {
@@ -45,8 +47,9 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
         db.execSQL("CREATE TABLE IF NOT EXISTS `languages` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `flagResourceId` INTEGER NOT NULL, `animalResourceId` INTEGER NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `learning_progress` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `userId` INTEGER NOT NULL, `languageId` INTEGER NOT NULL, `currentStreak` INTEGER NOT NULL, `totalPoints` INTEGER NOT NULL, `level` INTEGER NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `lesson_table` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `lessonNumber` INTEGER NOT NULL, `title` TEXT, `language` TEXT, `isPassed` INTEGER NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `GameHistory` (`HistoryID` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `UserID` INTEGER NOT NULL, `GameType` TEXT, `Score` INTEGER NOT NULL, `PlayedAt` INTEGER NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '04feba1fe9410d592e5cff9d531b23d4')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '74c0710a46a5e0bb87a1b9d5a68582fe')");
       }
 
       @Override
@@ -56,6 +59,7 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
         db.execSQL("DROP TABLE IF EXISTS `languages`");
         db.execSQL("DROP TABLE IF EXISTS `learning_progress`");
         db.execSQL("DROP TABLE IF EXISTS `lesson_table`");
+        db.execSQL("DROP TABLE IF EXISTS `GameHistory`");
         final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
         if (_callbacks != null) {
           for (RoomDatabase.Callback _callback : _callbacks) {
@@ -181,9 +185,24 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
                   + " Expected:\n" + _infoLessonTable + "\n"
                   + " Found:\n" + _existingLessonTable);
         }
+        final HashMap<String, TableInfo.Column> _columnsGameHistory = new HashMap<String, TableInfo.Column>(5);
+        _columnsGameHistory.put("HistoryID", new TableInfo.Column("HistoryID", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsGameHistory.put("UserID", new TableInfo.Column("UserID", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsGameHistory.put("GameType", new TableInfo.Column("GameType", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsGameHistory.put("Score", new TableInfo.Column("Score", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsGameHistory.put("PlayedAt", new TableInfo.Column("PlayedAt", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysGameHistory = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesGameHistory = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoGameHistory = new TableInfo("GameHistory", _columnsGameHistory, _foreignKeysGameHistory, _indicesGameHistory);
+        final TableInfo _existingGameHistory = TableInfo.read(db, "GameHistory");
+        if (!_infoGameHistory.equals(_existingGameHistory)) {
+          return new RoomOpenHelper.ValidationResult(false, "GameHistory(com.duolingo.app.models.GameHistory).\n"
+                  + " Expected:\n" + _infoGameHistory + "\n"
+                  + " Found:\n" + _existingGameHistory);
+        }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "04feba1fe9410d592e5cff9d531b23d4", "4b8c074729fea7f8ee9c4b5cafa4f58e");
+    }, "74c0710a46a5e0bb87a1b9d5a68582fe", "9566eeb6492f771e0c2b23b86d7d3566");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;
@@ -194,7 +213,7 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
   protected InvalidationTracker createInvalidationTracker() {
     final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
     final HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
-    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "vocabulary_table","users","languages","learning_progress","lesson_table");
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "vocabulary_table","users","languages","learning_progress","lesson_table","GameHistory");
   }
 
   @Override
@@ -208,6 +227,7 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
       _db.execSQL("DELETE FROM `languages`");
       _db.execSQL("DELETE FROM `learning_progress`");
       _db.execSQL("DELETE FROM `lesson_table`");
+      _db.execSQL("DELETE FROM `GameHistory`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();
@@ -227,6 +247,7 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
     _typeConvertersMap.put(LanguageDao.class, LanguageDao_Impl.getRequiredConverters());
     _typeConvertersMap.put(LearningProgressDao.class, LearningProgressDao_Impl.getRequiredConverters());
     _typeConvertersMap.put(LessonDao.class, LessonDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(ProgressDao.class, ProgressDao_Impl.getRequiredConverters());
     return _typeConvertersMap;
   }
 
@@ -311,6 +332,20 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
           _lessonDao = new LessonDao_Impl(this);
         }
         return _lessonDao;
+      }
+    }
+  }
+
+  @Override
+  public ProgressDao progressDao() {
+    if (_progressDao != null) {
+      return _progressDao;
+    } else {
+      synchronized(this) {
+        if(_progressDao == null) {
+          _progressDao = new ProgressDao_Impl(this);
+        }
+        return _progressDao;
       }
     }
   }

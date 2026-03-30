@@ -8,6 +8,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.duolingo.app.R;
+import com.duolingo.app.models.GameHistory;
 import com.duolingo.app.models.User;
 import com.duolingo.app.models.VocabularyItem;
 import com.duolingo.app.persistence.CSVHelper;
@@ -24,37 +25,72 @@ public class MainActivity extends AppCompatActivity {
     private TextView textGreeting, textUserName;
     private VocaVerseDatabase database;
     private MaterialCardView cardStartStudy;
+    private BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Khởi tạo Database và View
         database = VocaVerseDatabase.getDatabase(this);
         textGreeting = findViewById(R.id.text_greeting);
         textUserName = findViewById(R.id.text_user_name);
         cardStartStudy = findViewById(R.id.card_start_study);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
 
+        // Thiết lập Navigation
+        setupNavigation();
+
+        // Các logic hiện tại của bạn
         initializeLessonData();
-
         updateGreeting();
         loadUserData();
 
         if (cardStartStudy != null) {
             cardStartStudy.setOnClickListener(v -> {
-                // Giả định StudyActivity tồn tại
-                // Intent intent = new Intent(MainActivity.this, StudyActivity.class);
-                // startActivity(intent);
                 Toast.makeText(this, "Đang vào bài học...", Toast.LENGTH_SHORT).show();
             });
         }
-        
-        // Cần xử lý BottomNavigationView nếu ID tồn tại
+    }
+
+    /**
+     * Thiết lập logic cho Bottom Navigation
+     */
+    private void setupNavigation() {
+        if (bottomNavigationView == null) return;
+
+        // Đánh dấu mục "Học tập" là mục đang chọn
+        bottomNavigationView.setSelectedItemId(R.id.nav_study);
+
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            int id = item.getItemId();
+
+            if (id == R.id.nav_study) {
+                // Đã ở MainActivity, không cần làm gì
+                return true;
+            } else if (id == R.id.nav_community) {
+                // Chuyển sang Activity Menu Game
+                Intent intent = new Intent(MainActivity.this, GameMenuActivity.class);
+                startActivity(intent);
+                // Xóa hiệu ứng chuyển trang để cảm giác như ở chung 1 màn hình
+                overridePendingTransition(0, 0);
+                return true;
+            } else if (id == R.id.nav_test) {
+                // Tương lai: Chuyển sang TestActivity
+                Toast.makeText(this, "Chức năng Kiểm tra đang phát triển", Toast.LENGTH_SHORT).show();
+                return false;
+            } else if (id == R.id.nav_profile) {
+                // Tương lai: Chuyển sang ProfileActivity
+                Toast.makeText(this, "Chức năng Hồ sơ đang phát triển", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+            return false;
+        });
     }
 
     private void initializeLessonData() {
         VocaVerseDatabase.databaseWriteExecutor.execute(() -> {
-            // Kiểm tra xem đã có dữ liệu Lesson 1 chưa
             List<VocabularyItem> existing = database.vocabularyDao().getVocabularyByCategory("Lesson 1", "Tiếng Anh");
             if (existing == null || existing.isEmpty()) {
                 List<VocabularyItem> allItems = CSVHelper.readVocabularyFromCSV(this, "english_lessons.csv", "Tiếng Anh");
@@ -80,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         else if (timeOfDay >= 12 && timeOfDay < 16) greeting = "Chào buổi trưa,";
         else if (timeOfDay >= 16 && timeOfDay < 21) greeting = "Chào buổi chiều,";
         else greeting = "Chào buổi tối,";
-        
+
         textGreeting.setText(greeting);
     }
 
@@ -94,5 +130,58 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    private void addDummyHistory() {
+        VocaVerseDatabase.databaseWriteExecutor.execute(() -> {
+            int userId = getSharedPreferences("VocaVersePrefs", MODE_PRIVATE).getInt("current_user_id", 1);
+
+            // Kiểm tra nếu chưa có lịch sử thì mới thêm
+            if (database.progressDao().getAllHistory(userId).isEmpty()) {
+                long currentTime = System.currentTimeMillis();
+                long dayInMillis = 24 * 60 * 60 * 1000;
+
+                // Thêm dữ liệu cho 5 ngày liên tiếp để test "Chuỗi ngày"
+                database.progressDao().insertGameHistory(new GameHistory(userId, "Ghép từ", 10, currentTime));
+                database.progressDao().insertGameHistory(new GameHistory(userId, "Sắp xếp chữ", 15, currentTime - dayInMillis));
+                database.progressDao().insertGameHistory(new GameHistory(userId, "Điền từ", 8, currentTime - 2 * dayInMillis));
+                database.progressDao().insertGameHistory(new GameHistory(userId, "Lật thẻ", 12, currentTime - 3 * dayInMillis));
+                database.progressDao().insertGameHistory(new GameHistory(userId, "Ghép từ", 5, currentTime - 4 * dayInMillis));
+
+                runOnUiThread(() -> Toast.makeText(this, "Đã khởi tạo dữ liệu lịch sử mẫu!", Toast.LENGTH_SHORT).show());
+            }
+        });
+    }
+
+    public int calculateStreak(List<GameHistory> histories) {
+        if (histories == null || histories.isEmpty()) return 0;
+
+        int streak = 0;
+        Calendar cal = Calendar.getInstance();
+
+        // Đưa về mốc 0h00 ngày hôm nay
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND, 0);
+        long todayStart = cal.getTimeInMillis();
+
+        for (int i = 0; i < 30; i++) { // Kiểm tra tối đa 30 ngày gần đây
+            long targetDayStart = todayStart - (i * 24 * 60 * 60 * 1000L);
+            long targetDayEnd = targetDayStart + (24 * 60 * 60 * 1000L);
+
+            boolean played = false;
+            for (GameHistory h : histories) {
+                if (h.PlayedAt >= targetDayStart && h.PlayedAt < targetDayEnd) {
+                    played = true;
+                    break;
+                }
+            }
+
+            if (played) streak++;
+            else if (i == 0) continue; // Nếu hôm nay chưa chơi thì chưa ngắt streak ngay
+            else break; // Nếu một ngày trước đó không chơi -> Ngắt chuỗi
+        }
+        return streak;
     }
 }
