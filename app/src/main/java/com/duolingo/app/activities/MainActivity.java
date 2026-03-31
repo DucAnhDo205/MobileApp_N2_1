@@ -13,6 +13,7 @@ import com.duolingo.app.models.User;
 import com.duolingo.app.models.VocabularyItem;
 import com.duolingo.app.persistence.CSVHelper;
 import com.duolingo.app.persistence.VocaVerseDatabase;
+import com.duolingo.app.utils.NavigationHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.card.MaterialCardView;
 
@@ -32,17 +33,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        BottomNavigationView nav = findViewById(R.id.bottom_navigation);
+        NavigationHelper.setup(this, nav, R.id.nav_study);
+
         // Khởi tạo Database và View
         database = VocaVerseDatabase.getDatabase(this);
         textGreeting = findViewById(R.id.text_greeting);
         textUserName = findViewById(R.id.text_user_name);
         cardStartStudy = findViewById(R.id.card_start_study);
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        // Thiết lập Navigation
-        setupNavigation();
 
-        // Các logic hiện tại của bạn
         initializeLessonData();
         updateGreeting();
         loadUserData();
@@ -53,39 +53,14 @@ public class MainActivity extends AppCompatActivity {
             });
         }
     }
-    private void setupNavigation() {
-        if (bottomNavigationView == null) return;
 
-        bottomNavigationView.setSelectedItemId(R.id.nav_study);
-
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            int id = item.getItemId();
-
-            if (id == R.id.nav_study) {
-                return true;
-            }
-
-            if (id == R.id.nav_community) {
-                Intent intent = new Intent(MainActivity.this, GameMenuActivity.class);
-                startActivity(intent);
-                overridePendingTransition(0, 0);
-                return true;
-            }
-
-            if (id == R.id.nav_test) {
-                Intent intent = new Intent(this, ExamSelectionActivity.class);
-                startActivity(intent);
-                overridePendingTransition(0, 0);
-                return true;
-            }
-
-            if (id == R.id.nav_profile) {
-                Toast.makeText(this, "Chức năng Hồ sơ đang phát triển", Toast.LENGTH_SHORT).show();
-                return false;
-            }
-
-            return false;
-        });
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        // Cập nhật lại màu icon khi trang được lôi từ dưới lên
+        BottomNavigationView nav = findViewById(R.id.bottom_navigation);
+        NavigationHelper.setup(this, nav, R.id.nav_study);
     }
 
     private void initializeLessonData() {

@@ -8,6 +8,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.duolingo.app.R;
+import com.duolingo.app.utils.NavigationHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class ExamSelectionActivity extends AppCompatActivity {
@@ -18,12 +19,13 @@ public class ExamSelectionActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam_selection);
+        BottomNavigationView nav = findViewById(R.id.bottom_navigation);
+        NavigationHelper.setup(this, nav, R.id.nav_test);
 
         findViewById(R.id.card_easy).setOnClickListener(v -> startExam("EASY"));
         findViewById(R.id.card_medium).setOnClickListener(v -> startExam("MEDIUM"));
         findViewById(R.id.card_hard).setOnClickListener(v -> startExam("HARD"));
 
-        setupMainNavigation();
     }
 
     @Override
@@ -34,6 +36,14 @@ public class ExamSelectionActivity extends AppCompatActivity {
         if (bottomNavigationView != null) {
             bottomNavigationView.setSelectedItemId(R.id.nav_test);
         }
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        BottomNavigationView nav = findViewById(R.id.bottom_navigation);
+        NavigationHelper.setup(this, nav, R.id.nav_test);
     }
 
     private void updateProgressUI() {
@@ -72,39 +82,4 @@ public class ExamSelectionActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    private void setupMainNavigation() {
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
-        if (bottomNavigationView == null) return;
-
-        bottomNavigationView.setSelectedItemId(R.id.nav_test);
-
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            int id = item.getItemId();
-
-            if (id == R.id.nav_test) return true;
-
-            if (id == R.id.nav_study) {
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
-                overridePendingTransition(0, 0);
-                finish();
-                return true;
-            }
-
-            if (id == R.id.nav_community) {
-                Intent intent = new Intent(this, GameMenuActivity.class);
-                startActivity(intent);
-                overridePendingTransition(0, 0);
-                finish();
-                return true;
-            }
-
-            if (id == R.id.nav_profile) {
-                // Thêm Toast hoặc Activity Hồ sơ nếu cần
-                return false;
-            }
-
-            return false;
-        });
-    }
 }

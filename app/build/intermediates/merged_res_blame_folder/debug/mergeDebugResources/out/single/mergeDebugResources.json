@@ -4,20 +4,20 @@
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\activity_scramble_game.xml"
     },
     {
-        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_notification.xml.flat",
-        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_notification.xml"
-    },
-    {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_activity_exam_selection.xml.flat",
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\activity_exam_selection.xml"
     },
     {
-        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_flag_japan.xml.flat",
-        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_flag_japan.xml"
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_notification.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_notification.xml"
     },
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_bg_nav_done.xml.flat",
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\bg_nav_done.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_flag_japan.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_flag_japan.xml"
     },
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_delete.xml.flat",
@@ -64,12 +64,12 @@
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\menu\\main_menu.xml"
     },
     {
-        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_activity_study.xml.flat",
-        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\activity_study.xml"
-    },
-    {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_activity_setup_goal.xml.flat",
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\activity_setup_goal.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_activity_study.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\activity_study.xml"
     },
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\font_inter_regular.ttf.flat",
@@ -88,12 +88,12 @@
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_quiz.xml"
     },
     {
-        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_bg_game_shuffle.png.flat",
-        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\bg_game_shuffle.png"
-    },
-    {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_bg_game_shuffle.png.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\bg_game_shuffle.png"
     },
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_shuffle.xml.flat",
@@ -104,10 +104,6 @@
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "com.duolingo.app-debug-34:/layout_activity_exam_selection.xml.flat",
-        "source": "com.duolingo.app-main-36:/layout/activity_exam_selection.xml"
-    },
-    {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_baseline_backup_table_24.xml.flat",
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\baseline_backup_table_24.xml"
     },
@@ -116,12 +112,12 @@
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\activity_onboarding.xml"
     },
     {
-        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_bg_nav_current.xml.flat",
-        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\bg_nav_current.xml"
-    },
-    {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_activity_game_menu.xml.flat",
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\activity_game_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_bg_nav_current.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\bg_nav_current.xml"
     },
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_item_match.xml.flat",
@@ -148,6 +144,10 @@
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\activity_language_selection.xml"
     },
     {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_bg_circle_white.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\bg_circle_white.xml"
+    },
+    {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_bg_icon_blue.xml.flat",
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\bg_icon_blue.xml"
     },
@@ -158,6 +158,10 @@
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_bg_game_memory.png.flat",
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\bg_game_memory.png"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_arrow_right.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_arrow_right.xml"
     },
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_activity_study_plan.xml.flat",
@@ -188,12 +192,16 @@
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_vocabulary.xml"
     },
     {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_avatar_placeholder.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_avatar_placeholder.xml"
+    },
+    {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_activity_ghep_tu.xml.flat",
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\activity_ghep_tu.xml"
     },
     {
-        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_avatar_placeholder.xml.flat",
-        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_avatar_placeholder.xml"
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_activity_profile.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\activity_profile.xml"
     },
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_logout.xml.flat",
@@ -210,6 +218,10 @@
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_item_exam_nav.xml.flat",
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\item_exam_nav.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_pen_green.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_pen_green.xml"
     },
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\xml_data_extraction_rules.xml.flat",
@@ -288,6 +300,10 @@
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\color\\nav_item_color.xml"
     },
     {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_activity_edit_profile.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\activity_edit_profile.xml"
+    },
+    {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_custom_progress_bar.xml.flat",
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\custom_progress_bar.xml"
     },
@@ -298,6 +314,10 @@
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_bg_option_selector.xml.flat",
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\bg_option_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_bg_badge_level.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\bg_badge_level.xml"
     },
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_bg_nav_empty.xml.flat",
@@ -314,6 +334,14 @@
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_community.xml.flat",
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_community.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_edit_blue.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_edit_blue.xml"
+    },
+    {
+        "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_custom_progress_bar_blue.xml.flat",
+        "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\custom_progress_bar_blue.xml"
     },
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_note.xml.flat",
@@ -342,6 +370,10 @@
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_item_language.xml.flat",
         "source": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\item_language.xml"
+    },
+    {
+        "merged": "com.duolingo.app-debug-34:/layout_dialog_change_password.xml.flat",
+        "source": "com.duolingo.app-main-36:/layout/dialog_change_password.xml"
     },
     {
         "merged": "C:\\Users\\ADMIN\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\font_inter.xml.flat",

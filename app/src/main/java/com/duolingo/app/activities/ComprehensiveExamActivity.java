@@ -19,6 +19,7 @@ import com.duolingo.app.R;
 import com.duolingo.app.adapter.ExamNavigationAdapter;
 import com.duolingo.app.models.ExamQuestion;
 import com.duolingo.app.utils.ExamDataRepository;
+import com.duolingo.app.utils.NavigationHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.List;
@@ -38,20 +39,29 @@ public class ComprehensiveExamActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comprehensive_exam);
+        BottomNavigationView nav = findViewById(R.id.bottom_navigation);
+        NavigationHelper.setup(this, nav, R.id.nav_test);
 
         difficulty = getIntent().getStringExtra("DIFFICULTY_LEVEL");
         if (difficulty == null) difficulty = "EASY";
 
         questions = ExamDataRepository.getQuestions(difficulty);
 
-        // --- THỨ TỰ QUAN TRỌNG ĐỂ KHÔNG BỊ CRASH ---
         initViews();
-        setupNavigation();     // 1. Phải tạo Adapter trước
-        setupMainNavigation(); // 2. Cài đặt thanh điều hướng chính
-        displayQuestion(0);    // 3. Cuối cùng mới hiển thị câu hỏi
+        setupNavigation();
+        displayQuestion(0);
         // -------------------------------------------
 
         startTimer(ExamDataRepository.getTimeLimit(difficulty) * 60 * 1000);
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        // Cập nhật lại màu icon khi trang được lôi từ dưới lên
+        BottomNavigationView nav = findViewById(R.id.bottom_navigation);
+        NavigationHelper.setup(this, nav, R.id.nav_test);
     }
 
     private void initViews() {
@@ -68,7 +78,6 @@ public class ComprehensiveExamActivity extends AppCompatActivity {
         });
     }
 
-    // BỔ SUNG HÀM NÀY - TRƯỚC ĐÓ BẠN BỊ THIẾU
     private void setupNavigation() {
         RecyclerView rv = findViewById(R.id.rv_navigation);
         rv.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
@@ -122,38 +131,9 @@ public class ComprehensiveExamActivity extends AppCompatActivity {
             });
         }
 
-        // Kiểm tra an toàn trước khi gọi Adapter
         if (navAdapter != null) {
             navAdapter.setCurrentIndex(index);
         }
-    }
-
-    private void setupMainNavigation() {
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
-        if (bottomNav == null) return;
-
-        bottomNav.setSelectedItemId(R.id.nav_test);
-
-        bottomNav.setOnItemSelectedListener(item -> {
-            int id = item.getItemId();
-
-            if (!isReviewMode) {
-                new AlertDialog.Builder(this)
-                        .setTitle("Thoát bài thi?")
-                        .setMessage("Dữ liệu bài thi sẽ không được lưu. Bạn có chắc muốn thoát không?")
-                        .setPositiveButton("Thoát", (dialog, which) -> {
-                            performNavigation(id);
-                        })
-                        .setNegativeButton("Ở lại", (dialog, which) -> {
-                            bottomNav.setSelectedItemId(R.id.nav_test);
-                        })
-                        .show();
-                return false;
-            } else {
-                performNavigation(id);
-                return true;
-            }
-        });
     }
 
     private void performNavigation(int itemId) {

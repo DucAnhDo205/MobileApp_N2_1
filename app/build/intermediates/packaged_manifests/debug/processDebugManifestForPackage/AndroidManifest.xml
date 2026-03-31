@@ -60,6 +60,10 @@
             android:name="com.duolingo.app.activities.ComprehensiveExamActivity"
             android:exported="false" />
         <activity android:name="com.duolingo.app.activities.ExamSelectionActivity" />
+        <activity android:name="com.duolingo.app.activities.ProfileActivity" />
+        <activity
+            android:name="com.duolingo.app.activities.EditProfileActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.duolingo.app.activities.FlashcardActivity"
             android:label="Flashcards" />

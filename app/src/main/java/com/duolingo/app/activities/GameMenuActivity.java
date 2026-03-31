@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.duolingo.app.R;
+import com.duolingo.app.utils.NavigationHelper;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.card.MaterialCardView;
 
@@ -17,9 +18,9 @@ public class GameMenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_menu);
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation);
+        BottomNavigationView nav = findViewById(R.id.bottom_navigation);
+        NavigationHelper.setup(this, nav, R.id.nav_community);
 
-        setupNavigation();
         setupGameClickListeners();
 
         getOnBackPressedDispatcher().addCallback(this, new androidx.activity.OnBackPressedCallback(true) {
@@ -33,31 +34,12 @@ public class GameMenuActivity extends AppCompatActivity {
         });
     }
 
-    private void setupNavigation() {
-        if (bottomNavigationView == null) return;
-
-        bottomNavigationView.setSelectedItemId(R.id.nav_community);
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            int id = item.getItemId();
-
-            if (id == R.id.nav_community) return true;
-
-            if (id == R.id.nav_study) {
-                navigateTo(MainActivity.class, true);
-                return true;
-            }
-
-            if (id == R.id.nav_test) {
-                navigateTo(ExamSelectionActivity.class, false);
-                return true;
-            }
-
-            if (id == R.id.nav_profile) {
-                Toast.makeText(this, "Chức năng Hồ sơ đang phát triển", Toast.LENGTH_SHORT).show();
-                return false;
-            }
-            return false;
-        });
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        BottomNavigationView nav = findViewById(R.id.bottom_navigation);
+        NavigationHelper.setup(this, nav, R.id.nav_community);
     }
 
     private void setupGameClickListeners() {
