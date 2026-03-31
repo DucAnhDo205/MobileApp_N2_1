@@ -57,6 +57,10 @@
             android:windowSoftInputMode="adjustPan" />
         <activity android:name="com.duolingo.app.activities.MemoryGameActivity" />
         <activity
+            android:name="com.duolingo.app.activities.ComprehensiveExamActivity"
+            android:exported="false" />
+        <activity android:name="com.duolingo.app.activities.ExamSelectionActivity" />
+        <activity
             android:name="com.duolingo.app.activities.FlashcardActivity"
             android:label="Flashcards" />
         <activity

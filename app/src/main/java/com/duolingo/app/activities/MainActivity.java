@@ -53,38 +53,37 @@ public class MainActivity extends AppCompatActivity {
             });
         }
     }
-
-    /**
-     * Thiết lập logic cho Bottom Navigation
-     */
     private void setupNavigation() {
         if (bottomNavigationView == null) return;
 
-        // Đánh dấu mục "Học tập" là mục đang chọn
         bottomNavigationView.setSelectedItemId(R.id.nav_study);
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
             int id = item.getItemId();
 
             if (id == R.id.nav_study) {
-                // Đã ở MainActivity, không cần làm gì
                 return true;
-            } else if (id == R.id.nav_community) {
-                // Chuyển sang Activity Menu Game
+            }
+
+            if (id == R.id.nav_community) {
                 Intent intent = new Intent(MainActivity.this, GameMenuActivity.class);
                 startActivity(intent);
-                // Xóa hiệu ứng chuyển trang để cảm giác như ở chung 1 màn hình
                 overridePendingTransition(0, 0);
                 return true;
-            } else if (id == R.id.nav_test) {
-                // Tương lai: Chuyển sang TestActivity
-                Toast.makeText(this, "Chức năng Kiểm tra đang phát triển", Toast.LENGTH_SHORT).show();
-                return false;
-            } else if (id == R.id.nav_profile) {
-                // Tương lai: Chuyển sang ProfileActivity
+            }
+
+            if (id == R.id.nav_test) {
+                Intent intent = new Intent(this, ExamSelectionActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                return true;
+            }
+
+            if (id == R.id.nav_profile) {
                 Toast.makeText(this, "Chức năng Hồ sơ đang phát triển", Toast.LENGTH_SHORT).show();
                 return false;
             }
+
             return false;
         });
     }
@@ -183,5 +182,13 @@ public class MainActivity extends AppCompatActivity {
             else break; // Nếu một ngày trước đó không chơi -> Ngắt chuỗi
         }
         return streak;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (bottomNavigationView != null) {
+            bottomNavigationView.setSelectedItemId(R.id.nav_study);
+        }
     }
 }

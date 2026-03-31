@@ -44,6 +44,11 @@
         <activity android:name=".activities.MemoryGameActivity" />
 
         <activity
+            android:name=".activities.ComprehensiveExamActivity"
+            android:exported="false" />
+        <activity android:name=".activities.ExamSelectionActivity" />
+
+        <activity
             android:name=".activities.FlashcardActivity"
             android:label="Flashcards" />
         <activity
