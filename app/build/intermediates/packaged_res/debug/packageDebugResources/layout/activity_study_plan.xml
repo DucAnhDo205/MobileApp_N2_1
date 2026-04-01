@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FA"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Lên kế hoạch học tập"
+        android:textColor="#333333"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Chọn thời gian học mỗi ngày của bạn"
+        android:textColor="#666666"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_title" />
+
+    <RadioGroup
+        android:id="@+id/radio_group_plan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@id/text_subtitle">
+
+        <RadioButton
+            android:id="@+id/radio_easy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_radio_selector"
+            android:button="@null"
+            android:padding="16dp"
+            android:text="Dễ: 5 phút mỗi ngày"
+            android:textColor="#333333" />
+
+        <RadioButton
+            android:id="@+id/radio_normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_radio_selector"
+            android:button="@null"
+            android:checked="true"
+            android:padding="16dp"
+            android:text="Vừa: 10 phút mỗi ngày"
+            android:textColor="#333333" />
+
+        <RadioButton
+            android:id="@+id/radio_hard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/bg_radio_selector"
+            android:button="@null"
+            android:padding="16dp"
+            android:text="Chuyên sâu: 15 phút mỗi ngày"
+            android:textColor="#333333" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/text_notif_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Nhắc nhở tôi vào lúc:"
+        android:textColor="#333333"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radio_group_plan" />
+
+    <Button
+        android:id="@+id/button_pick_time"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="19:00"
+        app:layout_constraintBottom_toBottomOf="@id/text_notif_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text_notif_time" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_start"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="48dp"
+        android:backgroundTint="#7B1FA2"
+        android:text="Bắt đầu hành trình"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:cornerRadius="16dp"
+        app:layout_constraintTop_toBottomOf="@id/button_pick_time" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,23 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color purple_200
+color purple_500
+color purple_700
+color teal_200
+color teal_700
+color white
+id button_correct
+id button_incorrect
+id button_layout
+id button_start_learning
+id card_view
+id layout_meaning
+id text_example
+id text_meaning
+id text_no_cards
+id text_word
+layout activity_flashcard
+layout activity_main
+string app_name
+style Theme.DuolingoApp

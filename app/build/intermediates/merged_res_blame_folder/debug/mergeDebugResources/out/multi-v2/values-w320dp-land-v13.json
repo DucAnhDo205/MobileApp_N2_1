@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.duolingo.app-mergeDebugResources-32:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\ADMIn\\.gradle\\caches\\9.3.1\\transforms\\dc17ba519d0de0842c1259d57c23e1e5\\workspace\\transformed\\material-1.11.0\\res\\values-w320dp-land-v13\\values-w320dp-land-v13.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,110",
+                        "endColumns": "54,61",
+                        "endOffsets": "105,167"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="64dp"
+    android:viewportWidth="900"
+    android:viewportHeight="600">
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M0,0 H900 V600 H0 Z" />
+
+    <group
+        android:translateX="450"
+        android:translateY="300">
+        <path
+            android:fillColor="#CD2E3A"
+            android:pathData="M 0, -150 A 150,150 0 0,1 0,150 A 75,75 0 0,1 0,0 A 75,75 0 0,0 0,-150 Z" />
+        <path
+            android:fillColor="#0047A0"
+            android:pathData="M 0, -150 A 150,150 0 0,0 0,150 A 75,75 0 0,0 0,0 A 75,75 0 0,1 0,-150 Z" />
+    </group>
+
+    <!-- Geon (top-left) -->
+    <path android:fillColor="#000000" android:pathData="M150,150h120v30h-120z M150,200h120v30h-120z M150,250h120v30h-120z" />
+
+    <!-- Gon (bottom-left) -->
+    <path android:fillColor="#000000" android:pathData="M150,320h50v30h-50z M220,320h50v30h-50z M150,370h50v30h-50z M220,370h50v30h-50z M150,420h50v30h-50z M220,420h50v30h-50z" />
+
+    <!-- Gam (top-right) -->
+    <path android:fillColor="#000000" android:pathData="M630,150h50v30h-50z M700,150h50v30h-50z M630,200h120v30h-120z M630,250h50v30h-50z M700,250h50v30h-50z" />
+
+    <!-- Ri (bottom-right) -->
+    <path android:fillColor="#000000" android:pathData="M630,320h120v30h-120z M630,370h50v30h-50z M700,370h50v30h-50z M630,420h120v30h-120z" />
+
+</vector>
