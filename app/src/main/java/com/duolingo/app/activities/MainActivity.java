@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
         // 1. Ánh xạ View
         rvStudyModules = findViewById(R.id.rvStudyModules);
         textGreeting = findViewById(R.id.text_greeting);
@@ -56,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
         setupRecyclerView();
 
         initializeGrammarData();
+
+        loadGrammarQuestionsFromCSV();
     }
 
     // Luồng móc nối dữ liệu thực tế từ Database
@@ -117,6 +118,63 @@ public class MainActivity extends AppCompatActivity {
             if (database.grammarDao().getCount() == 0) {
                 List<GrammarQuestion> questions = CSVHelper.readGrammarFromCSV(this, "grammar_questions.csv");
                 database.grammarDao().insertAll(questions);
+            }
+        });
+    }
+
+    private void loadGrammarQuestionsFromCSV() {
+        VocaVerseDatabase db = VocaVerseDatabase.getDatabase(this);
+        VocaVerseDatabase.databaseWriteExecutor.execute(() -> {
+
+            // Dùng getCount() để đếm xem kho có trống không
+            if (db.grammarDao().getCount() == 0) {
+                try {
+                    java.io.InputStream is = getAssets().open("grammar_questions.csv");
+                    java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(is));
+                    String line;
+                    reader.readLine(); // Bỏ qua dòng tiêu đề
+
+                    List<GrammarQuestion> bulkInsertList = new ArrayList<>();
+
+                    while ((line = reader.readLine()) != null) {
+                        // Regex này giúp tách dấu phẩy chuẩn hơn (phòng trường hợp trong lý thuyết có dấu phẩy)
+                        String[] parts = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
+
+                        if (parts.length >= 12) {
+                            GrammarQuestion q = new GrammarQuestion(
+                                    parts[0].replace("\"", "").trim(),
+                                    parts[1].replace("\"", "").trim(),
+                                    parts[2].replace("\"", "").trim(),
+                                    parts[3].replace("\"", "").trim(),
+                                    parts[4].replace("\"", "").trim(),
+                                    parts[5].replace("\"", "").trim(),
+                                    parts[6].replace("\"", "").trim(),
+                                    parts[7].replace("\"", "").trim(),
+                                    parts[8].replace("\"", "").trim(),
+                                    parts[9].replace("\"", "").trim(),
+                                    parts[10].replace("\"", "").trim(),
+                                    parts[11].replace("\"", "").trim()
+                            );
+                            bulkInsertList.add(q);
+                        }
+                    }
+                    reader.close();
+
+                    // Nhồi một phát tất cả dữ liệu vào Database
+                    db.grammarDao().insertAll(bulkInsertList);
+
+                    // Báo cáo thành công ra màn hình
+                    runOnUiThread(() -> android.widget.Toast.makeText(MainActivity.this,
+                            "Đã nạp xong " + bulkInsertList.size() + " câu Ngữ pháp!",
+                            android.widget.Toast.LENGTH_LONG).show());
+
+                } catch (Exception e) {
+                    // Nếu lỗi, in thẳng ra Logcat dòng màu đỏ để bắt bệnh
+                    e.printStackTrace();
+                    runOnUiThread(() -> android.widget.Toast.makeText(MainActivity.this,
+                            "Lỗi đọc file CSV: " + e.getMessage(),
+                            android.widget.Toast.LENGTH_LONG).show());
+                }
             }
         });
     }

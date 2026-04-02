@@ -36,6 +36,8 @@ int drawable ic_avatar_placeholder 0x0
 int drawable ic_back 0x0
 int drawable ic_book 0x0
 int drawable ic_bulb 0x0
+int drawable ic_check 0x0
+int drawable ic_close 0x0
 int drawable ic_community 0x0
 int drawable ic_dashboard_background 0x0
 int drawable ic_facebook_logo 0x0
@@ -72,7 +74,6 @@ int id btn_back_list 0x0
 int id btn_c 0x0
 int id btn_check_answer 0x0
 int id btn_d 0x0
-int id btn_hint 0x0
 int id button_audio 0x0
 int id button_correct 0x0
 int id button_get_started 0x0
@@ -118,8 +119,10 @@ int id input_layout_password 0x0
 int id input_layout_phone 0x0
 int id input_layout_username 0x0
 int id input_layout_word 0x0
+int id iv_feedback_icon 0x0
 int id iv_theory_arrow 0x0
-int id layout_header 0x0
+int id layout_feedback_bottom 0x0
+int id layout_feedback_message 0x0
 int id layout_meaning 0x0
 int id layout_options 0x0
 int id layout_theory_content 0x0
@@ -164,6 +167,8 @@ int id text_word 0x0
 int id toolbar 0x0
 int id tvDescription 0x0
 int id tvTitle 0x0
+int id tv_feedback_subtitle 0x0
+int id tv_feedback_title 0x0
 int id tv_lesson_desc 0x0
 int id tv_lesson_title 0x0
 int id tv_question 0x0

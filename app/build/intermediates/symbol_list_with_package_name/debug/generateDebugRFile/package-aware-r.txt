@@ -37,6 +37,8 @@ drawable ic_avatar_placeholder
 drawable ic_back
 drawable ic_book
 drawable ic_bulb
+drawable ic_check
+drawable ic_close
 drawable ic_community
 drawable ic_dashboard_background
 drawable ic_facebook_logo
@@ -73,7 +75,6 @@ id btn_back_list
 id btn_c
 id btn_check_answer
 id btn_d
-id btn_hint
 id button_audio
 id button_correct
 id button_get_started
@@ -119,8 +120,10 @@ id input_layout_password
 id input_layout_phone
 id input_layout_username
 id input_layout_word
+id iv_feedback_icon
 id iv_theory_arrow
-id layout_header
+id layout_feedback_bottom
+id layout_feedback_message
 id layout_meaning
 id layout_options
 id layout_theory_content
@@ -165,6 +168,8 @@ id text_word
 id toolbar
 id tvDescription
 id tvTitle
+id tv_feedback_subtitle
+id tv_feedback_title
 id tv_lesson_desc
 id tv_lesson_title
 id tv_question

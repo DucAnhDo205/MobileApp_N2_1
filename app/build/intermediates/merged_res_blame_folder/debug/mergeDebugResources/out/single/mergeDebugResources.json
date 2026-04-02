@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\font_inter_bold.ttf.flat",
-        "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\font\\inter_bold.ttf"
-    },
-    {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_mic.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_mic.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\font_inter_bold.ttf.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\font\\inter_bold.ttf"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_item_language.xml.flat",
@@ -30,6 +30,10 @@
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_community.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_community.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_check.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_check.xml"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_bg_icon_pink.xml.flat",
@@ -94,6 +98,10 @@
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_activity_grammar.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\activity_grammar.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_close.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_close.xml"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_activity_language_selection.xml.flat",

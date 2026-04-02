@@ -3025,8 +3025,10 @@ int drawable ic_call_answer_video 0x7f08009a
 int drawable ic_call_answer_video_low 0x7f08009b
 int drawable ic_call_decline 0x7f08009c
 int drawable ic_call_decline_low 0x7f08009d
+int drawable ic_check 0x7f08010b
 int drawable ic_clear_black_24 0x7f08009e
 int drawable ic_clock_black_24dp 0x7f08009f
+int drawable ic_close 0x7f08010c
 int drawable ic_community 0x7f0800a0
 int drawable ic_dashboard_background 0x7f0800a1
 int drawable ic_facebook_logo 0x7f0800a2
@@ -3245,7 +3247,6 @@ int id btn_back_list 0x7f0a0255
 int id btn_c 0x7f0a0067
 int id btn_check_answer 0x7f0a0068
 int id btn_d 0x7f0a0069
-int id btn_hint 0x7f0a006a
 int id buttonPanel 0x7f0a006b
 int id button_audio 0x7f0a006c
 int id button_correct 0x7f0a006d
@@ -3421,12 +3422,14 @@ int id invisible 0x7f0a0115
 int id inward 0x7f0a0116
 int id italic 0x7f0a0117
 int id item_touch_helper_previous_elevation 0x7f0a0118
+int id iv_feedback_icon 0x7f0a025d
 int id iv_theory_arrow 0x7f0a025a
 int id jumpToEnd 0x7f0a0119
 int id jumpToStart 0x7f0a011a
 int id labeled 0x7f0a011b
 int id layout 0x7f0a011c
-int id layout_header 0x7f0a011d
+int id layout_feedback_bottom 0x7f0a025e
+int id layout_feedback_message 0x7f0a025f
 int id layout_meaning 0x7f0a011e
 int id layout_options 0x7f0a011f
 int id layout_theory_content 0x7f0a025b
@@ -3712,6 +3715,8 @@ int id transition_transform 0x7f0a0234
 int id triangle 0x7f0a0235
 int id tvDescription 0x7f0a0236
 int id tvTitle 0x7f0a0237
+int id tv_feedback_subtitle 0x7f0a0260
+int id tv_feedback_title 0x7f0a0261
 int id tv_lesson_desc 0x7f0a0257
 int id tv_lesson_title 0x7f0a0258
 int id tv_question 0x7f0a0238

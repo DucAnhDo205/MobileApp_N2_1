@@ -2,13 +2,30 @@ package com.duolingo.app.persistence;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+
 import com.duolingo.app.models.GrammarQuestion;
+
 import java.util.List;
 
 @Dao
 public interface GrammarDao {
-    @Insert
+
+    // --- CÁC HÀM MAIN ACTIVITY ĐANG CẦN ---
+
+    // 1. Hàm kiểm tra xem kho có rỗng không
+    @Query("SELECT * FROM grammar_questions")
+    List<GrammarQuestion> getAllQuestions();
+
+    // 2. Hàm nhét từng câu hỏi vào Database
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    void insertQuestion(GrammarQuestion question);
+
+
+    // --- CÁC HÀM CŨ CỦA EM (Giữ lại dùng cho sau này) ---
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     void insertAll(List<GrammarQuestion> questions);
 
     @Query("SELECT * FROM grammar_questions WHERE category = :category")
