@@ -3,6 +3,7 @@ package com.duolingo.app.persistence;
 import android.content.Context;
 import android.util.Log;
 
+import com.duolingo.app.models.GrammarQuestion;
 import com.duolingo.app.models.VocabularyItem;
 
 import java.io.BufferedReader;
@@ -53,6 +54,24 @@ public class CSVHelper {
             Log.e(TAG, "Lỗi đọc file: " + e.getMessage());
         }
         return vocabularyList;
+    }
+
+    public static List<GrammarQuestion> readGrammarFromCSV(Context context, String fileName) {
+        List<GrammarQuestion> questions = new ArrayList<>();
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(context.getAssets().open(fileName)))) {
+            String line;
+            reader.readLine(); // Bỏ qua dòng tiêu đề
+            while ((line = reader.readLine()) != null) {
+                String[] tokens = line.split(",");
+                if (tokens.length >= 12) {
+                    questions.add(new GrammarQuestion(
+                            tokens[0], tokens[1], tokens[2], tokens[3], tokens[4],
+                            tokens[5], tokens[6], tokens[7], tokens[8], tokens[9], tokens[10], tokens[11]
+                    ));
+                }
+            }
+        } catch (IOException e) { e.printStackTrace(); }
+        return questions;
     }
 
     private static String cleanToken(String token) {

@@ -4,7 +4,7 @@
             "outputFile": "com.duolingo.app-mergeDebugResources-32:/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\ADMIn\\.gradle\\caches\\9.3.1\\transforms\\2b289ca0657079b2a37c3c34cdb78a23\\workspace\\transformed\\material-1.11.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\9.3.1\\transforms\\2b289ca0657079b2a37c3c34cdb78a23\\workspace\\transformed\\material-1.11.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12,13,14",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\ADMIn\\.gradle\\caches\\9.3.1\\transforms\\0676ad50f911a0f7a421e151ddd02b2a\\workspace\\transformed\\appcompat-1.6.1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\admin\\.gradle\\caches\\9.3.1\\transforms\\0676ad50f911a0f7a421e151ddd02b2a\\workspace\\transformed\\appcompat-1.6.1\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

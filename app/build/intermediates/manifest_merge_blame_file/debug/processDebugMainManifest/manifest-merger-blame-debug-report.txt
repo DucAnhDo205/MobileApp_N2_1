@@ -12,178 +12,181 @@
 9-->INJECTED
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->D:\Duolingo\app\src\main\AndroidManifest.xml:5:5-67
-11-->D:\Duolingo\app\src\main\AndroidManifest.xml:5:22-64
+11-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:5:5-67
+11-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-12-->D:\Duolingo\app\src\main\AndroidManifest.xml:6:5-77
-12-->D:\Duolingo\app\src\main\AndroidManifest.xml:6:22-74
+12-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:6:5-77
+12-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:6:22-74
 13    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
-13-->D:\Duolingo\app\src\main\AndroidManifest.xml:7:5-79
-13-->D:\Duolingo\app\src\main\AndroidManifest.xml:7:22-76
+13-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:7:5-79
+13-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:7:22-76
 14
 15    <permission
-15-->[androidx.core:core:1.12.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\600ce335126191a6665aba50e04cf107\workspace\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
+15-->[androidx.core:core:1.12.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\600ce335126191a6665aba50e04cf107\workspace\transformed\core-1.12.0\AndroidManifest.xml:22:5-24:47
 16        android:name="com.duolingo.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-16-->[androidx.core:core:1.12.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\600ce335126191a6665aba50e04cf107\workspace\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
+16-->[androidx.core:core:1.12.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\600ce335126191a6665aba50e04cf107\workspace\transformed\core-1.12.0\AndroidManifest.xml:23:9-81
 17        android:protectionLevel="signature" />
-17-->[androidx.core:core:1.12.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\600ce335126191a6665aba50e04cf107\workspace\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
+17-->[androidx.core:core:1.12.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\600ce335126191a6665aba50e04cf107\workspace\transformed\core-1.12.0\AndroidManifest.xml:24:9-44
 18
 19    <uses-permission android:name="com.duolingo.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-19-->[androidx.core:core:1.12.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\600ce335126191a6665aba50e04cf107\workspace\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
-19-->[androidx.core:core:1.12.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\600ce335126191a6665aba50e04cf107\workspace\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
+19-->[androidx.core:core:1.12.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\600ce335126191a6665aba50e04cf107\workspace\transformed\core-1.12.0\AndroidManifest.xml:26:5-97
+19-->[androidx.core:core:1.12.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\600ce335126191a6665aba50e04cf107\workspace\transformed\core-1.12.0\AndroidManifest.xml:26:22-94
 20
 21    <application
-21-->D:\Duolingo\app\src\main\AndroidManifest.xml:9:5-45:19
+21-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:9:5-48:19
 22        android:allowBackup="true"
-22-->D:\Duolingo\app\src\main\AndroidManifest.xml:10:9-35
+22-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:10:9-35
 23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-23-->[androidx.core:core:1.12.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\600ce335126191a6665aba50e04cf107\workspace\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
+23-->[androidx.core:core:1.12.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\600ce335126191a6665aba50e04cf107\workspace\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
 24        android:dataExtractionRules="@xml/data_extraction_rules"
-24-->D:\Duolingo\app\src\main\AndroidManifest.xml:11:9-65
+24-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:11:9-65
 25        android:debuggable="true"
 26        android:extractNativeLibs="false"
 26-->INJECTED
 27        android:fullBackupContent="@xml/backup_rules"
-27-->D:\Duolingo\app\src\main\AndroidManifest.xml:12:9-54
+27-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:12:9-54
 28        android:icon="@mipmap/ic_launcher"
-28-->D:\Duolingo\app\src\main\AndroidManifest.xml:13:9-43
+28-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:13:9-43
 29        android:label="@string/app_name"
-29-->D:\Duolingo\app\src\main\AndroidManifest.xml:14:9-41
+29-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:14:9-41
 30        android:roundIcon="@mipmap/ic_launcher_round"
-30-->D:\Duolingo\app\src\main\AndroidManifest.xml:15:9-54
+30-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:15:9-54
 31        android:supportsRtl="true"
-31-->D:\Duolingo\app\src\main\AndroidManifest.xml:16:9-35
+31-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:16:9-35
 32        android:testOnly="true"
 33        android:theme="@style/Theme.DuolingoApp"
-33-->D:\Duolingo\app\src\main\AndroidManifest.xml:17:9-49
+33-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:17:9-49
 34        android:usesCleartextTraffic="true" >
-34-->D:\Duolingo\app\src\main\AndroidManifest.xml:18:9-44
-35        <activity
-35-->D:\Duolingo\app\src\main\AndroidManifest.xml:21:9-28:20
-36            android:name="com.duolingo.app.activities.OnboardingActivity"
-36-->D:\Duolingo\app\src\main\AndroidManifest.xml:22:13-58
-37            android:exported="true" >
-37-->D:\Duolingo\app\src\main\AndroidManifest.xml:23:13-36
-38            <intent-filter>
-38-->D:\Duolingo\app\src\main\AndroidManifest.xml:24:13-27:29
-39                <action android:name="android.intent.action.MAIN" />
-39-->D:\Duolingo\app\src\main\AndroidManifest.xml:25:17-69
-39-->D:\Duolingo\app\src\main\AndroidManifest.xml:25:25-66
-40
-41                <category android:name="android.intent.category.LAUNCHER" />
-41-->D:\Duolingo\app\src\main\AndroidManifest.xml:26:17-77
-41-->D:\Duolingo\app\src\main\AndroidManifest.xml:26:27-74
-42            </intent-filter>
-43        </activity>
-44        <activity android:name="com.duolingo.app.activities.LoginActivity" />
-44-->D:\Duolingo\app\src\main\AndroidManifest.xml:30:9-62
-44-->D:\Duolingo\app\src\main\AndroidManifest.xml:30:19-59
-45        <activity android:name="com.duolingo.app.activities.RegisterActivity" />
-45-->D:\Duolingo\app\src\main\AndroidManifest.xml:31:9-65
-45-->D:\Duolingo\app\src\main\AndroidManifest.xml:31:19-62
-46        <activity android:name="com.duolingo.app.activities.LanguageSelectionActivity" />
-46-->D:\Duolingo\app\src\main\AndroidManifest.xml:32:9-74
-46-->D:\Duolingo\app\src\main\AndroidManifest.xml:32:19-71
-47        <activity android:name="com.duolingo.app.activities.SetupGoalActivity" />
-47-->D:\Duolingo\app\src\main\AndroidManifest.xml:33:9-66
-47-->D:\Duolingo\app\src\main\AndroidManifest.xml:33:19-63
-48        <activity android:name="com.duolingo.app.activities.StudyPlanActivity" />
-48-->D:\Duolingo\app\src\main\AndroidManifest.xml:34:9-66
-48-->D:\Duolingo\app\src\main\AndroidManifest.xml:34:19-63
-49        <activity android:name="com.duolingo.app.activities.MainActivity" />
-49-->D:\Duolingo\app\src\main\AndroidManifest.xml:35:9-61
-49-->D:\Duolingo\app\src\main\AndroidManifest.xml:35:19-58
-50        <activity
-50-->D:\Duolingo\app\src\main\AndroidManifest.xml:36:9-38:42
-51            android:name="com.duolingo.app.activities.FlashcardActivity"
-51-->D:\Duolingo\app\src\main\AndroidManifest.xml:37:13-57
-52            android:label="Flashcards" />
-52-->D:\Duolingo\app\src\main\AndroidManifest.xml:38:13-39
-53        <activity
-53-->D:\Duolingo\app\src\main\AndroidManifest.xml:39:9-41:40
-54            android:name="com.duolingo.app.activities.AddVocabularyActivity"
-54-->D:\Duolingo\app\src\main\AndroidManifest.xml:40:13-61
-55            android:label="Add Word" />
-55-->D:\Duolingo\app\src\main\AndroidManifest.xml:41:13-37
-56
-57        <receiver android:name="com.duolingo.app.services.NotificationReceiver" />
-57-->D:\Duolingo\app\src\main\AndroidManifest.xml:43:9-67
-57-->D:\Duolingo\app\src\main\AndroidManifest.xml:43:19-64
-58
-59        <provider
-59-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\831a705722417c11da4cfd0e623b2645\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-60            android:name="androidx.startup.InitializationProvider"
-60-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\831a705722417c11da4cfd0e623b2645\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
-61            android:authorities="com.duolingo.app.androidx-startup"
-61-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\831a705722417c11da4cfd0e623b2645\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
-62            android:exported="false" >
-62-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\831a705722417c11da4cfd0e623b2645\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
-63            <meta-data
-63-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\831a705722417c11da4cfd0e623b2645\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-64                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-64-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\831a705722417c11da4cfd0e623b2645\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
-65                android:value="androidx.startup" />
-65-->[androidx.emoji2:emoji2:1.2.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\831a705722417c11da4cfd0e623b2645\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
-66            <meta-data
-66-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\31d9509e195f2bc35e034f767a83086f\workspace\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
-67                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-67-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\31d9509e195f2bc35e034f767a83086f\workspace\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
-68                android:value="androidx.startup" />
-68-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\31d9509e195f2bc35e034f767a83086f\workspace\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
-69            <meta-data
-69-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
-70                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-70-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
-71                android:value="androidx.startup" />
-71-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
-72        </provider>
-73
-74        <service
-74-->[androidx.room:room-runtime:2.6.1] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\6510ac3e94d2f88a34ccef6b2d694195\workspace\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
-75            android:name="androidx.room.MultiInstanceInvalidationService"
-75-->[androidx.room:room-runtime:2.6.1] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\6510ac3e94d2f88a34ccef6b2d694195\workspace\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
-76            android:directBootAware="true"
-76-->[androidx.room:room-runtime:2.6.1] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\6510ac3e94d2f88a34ccef6b2d694195\workspace\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
-77            android:exported="false" />
-77-->[androidx.room:room-runtime:2.6.1] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\6510ac3e94d2f88a34ccef6b2d694195\workspace\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
-78
-79        <receiver
-79-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
-80            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
-81            android:directBootAware="false"
-81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
-82            android:enabled="true"
-82-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
-83            android:exported="true"
-83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
-84            android:permission="android.permission.DUMP" >
-84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
-85            <intent-filter>
-85-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
-86                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
-86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
-87            </intent-filter>
-88            <intent-filter>
-88-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
-89                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-89-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
-89-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
-90            </intent-filter>
-91            <intent-filter>
-91-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
-92                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-92-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
-92-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
-93            </intent-filter>
-94            <intent-filter>
-94-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
-95                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-95-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
-95-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\ADMIn\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
-96            </intent-filter>
-97        </receiver>
-98    </application>
-99
-100</manifest>
+34-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:18:9-44
+35        <activity android:name="com.duolingo.app.activities.OnboardingActivity" />
+35-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:21:9-22:61
+35-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:22:13-58
+36        <activity android:name="com.duolingo.app.activities.LoginActivity" />
+36-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:26:9-62
+36-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:26:19-59
+37        <activity android:name="com.duolingo.app.activities.RegisterActivity" />
+37-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:27:9-65
+37-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:27:19-62
+38        <activity android:name="com.duolingo.app.activities.LanguageSelectionActivity" />
+38-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:28:9-74
+38-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:28:19-71
+39        <activity android:name="com.duolingo.app.activities.SetupGoalActivity" />
+39-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:29:9-66
+39-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:29:19-63
+40        <activity android:name="com.duolingo.app.activities.StudyPlanActivity" />
+40-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:30:9-66
+40-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:30:19-63
+41        <activity
+41-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:31:9-37:20
+42            android:name="com.duolingo.app.activities.MainActivity"
+42-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:31:19-58
+43            android:exported="true" >
+43-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:32:13-36
+44            <intent-filter>
+44-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:33:13-36:29
+45                <action android:name="android.intent.action.MAIN" />
+45-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:34:17-69
+45-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:34:25-66
+46
+47                <category android:name="android.intent.category.LAUNCHER" />
+47-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:35:17-77
+47-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:35:27-74
+48            </intent-filter>
+49        </activity>
+50        <activity android:name="com.duolingo.app.activities.GrammarListActivity" />
+50-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:38:9-68
+50-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:38:19-65
+51        <activity
+51-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:39:9-41:42
+52            android:name="com.duolingo.app.activities.FlashcardActivity"
+52-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:40:13-57
+53            android:label="Flashcards" />
+53-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:41:13-39
+54        <activity
+54-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:42:9-44:40
+55            android:name="com.duolingo.app.activities.AddVocabularyActivity"
+55-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:43:13-61
+56            android:label="Add Word" />
+56-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:44:13-37
+57
+58        <receiver android:name="com.duolingo.app.services.NotificationReceiver" />
+58-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:46:9-67
+58-->C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:46:19-64
+59
+60        <provider
+60-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\831a705722417c11da4cfd0e623b2645\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+61            android:name="androidx.startup.InitializationProvider"
+61-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\831a705722417c11da4cfd0e623b2645\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:25:13-67
+62            android:authorities="com.duolingo.app.androidx-startup"
+62-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\831a705722417c11da4cfd0e623b2645\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:26:13-68
+63            android:exported="false" >
+63-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\831a705722417c11da4cfd0e623b2645\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:27:13-37
+64            <meta-data
+64-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\831a705722417c11da4cfd0e623b2645\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+65                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+65-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\831a705722417c11da4cfd0e623b2645\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:30:17-75
+66                android:value="androidx.startup" />
+66-->[androidx.emoji2:emoji2:1.2.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\831a705722417c11da4cfd0e623b2645\workspace\transformed\jetified-emoji2-1.2.0\AndroidManifest.xml:31:17-49
+67            <meta-data
+67-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\31d9509e195f2bc35e034f767a83086f\workspace\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:29:13-31:52
+68                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+68-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\31d9509e195f2bc35e034f767a83086f\workspace\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:30:17-78
+69                android:value="androidx.startup" />
+69-->[androidx.lifecycle:lifecycle-process:2.7.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\31d9509e195f2bc35e034f767a83086f\workspace\transformed\jetified-lifecycle-process-2.7.0\AndroidManifest.xml:31:17-49
+70            <meta-data
+70-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+71                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+71-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+72                android:value="androidx.startup" />
+72-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+73        </provider>
+74
+75        <service
+75-->[androidx.room:room-runtime:2.6.1] C:\Users\admin\.gradle\caches\9.3.1\transforms\6510ac3e94d2f88a34ccef6b2d694195\workspace\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
+76            android:name="androidx.room.MultiInstanceInvalidationService"
+76-->[androidx.room:room-runtime:2.6.1] C:\Users\admin\.gradle\caches\9.3.1\transforms\6510ac3e94d2f88a34ccef6b2d694195\workspace\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
+77            android:directBootAware="true"
+77-->[androidx.room:room-runtime:2.6.1] C:\Users\admin\.gradle\caches\9.3.1\transforms\6510ac3e94d2f88a34ccef6b2d694195\workspace\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
+78            android:exported="false" />
+78-->[androidx.room:room-runtime:2.6.1] C:\Users\admin\.gradle\caches\9.3.1\transforms\6510ac3e94d2f88a34ccef6b2d694195\workspace\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
+79
+80        <receiver
+80-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+81            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+81-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+82            android:directBootAware="false"
+82-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+83            android:enabled="true"
+83-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+84            android:exported="true"
+84-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+85            android:permission="android.permission.DUMP" >
+85-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+86            <intent-filter>
+86-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+87                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+87-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+88            </intent-filter>
+89            <intent-filter>
+89-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+90                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+90-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+90-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+91            </intent-filter>
+92            <intent-filter>
+92-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+93                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+93-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+93-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+94            </intent-filter>
+95            <intent-filter>
+95-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+96                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+96-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+96-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\8afce370fae5adf52bc96c420cbb50a0\workspace\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
+97            </intent-filter>
+98        </receiver>
+99    </application>
+100
+101</manifest>

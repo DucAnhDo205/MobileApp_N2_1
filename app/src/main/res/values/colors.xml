@@ -2,4 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="vocab_main">#C084FC</color>
+    <color name="vocab_bg">#1AC084FC</color>
+
+    <color name="grammar_main">#2196F3</color>
+    <color name="grammar_bg">#1A2196F3</color>
+
+    <color name="listening_main">#FFD166</color>
+    <color name="listening_bg">#30FFD166</color>
+
+    <color name="pronunciation_main">#6EE7B7</color>
+    <color name="pronunciation_bg">#306EE7B7</color>
 </resources>

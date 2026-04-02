@@ -34,10 +34,12 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
 
   private volatile LessonDao _lessonDao;
 
+  private volatile GrammarDao _grammarDao;
+
   @Override
   @NonNull
   protected SupportSQLiteOpenHelper createOpenHelper(@NonNull final DatabaseConfiguration config) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(6) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(7) {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS `vocabulary_table` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `word` TEXT, `meaning` TEXT, `example` TEXT, `language` TEXT, `category` TEXT, `lessonNumber` INTEGER NOT NULL, `nextReviewDate` INTEGER NOT NULL, `interval` INTEGER NOT NULL, `easeFactor` REAL NOT NULL)");
@@ -45,8 +47,9 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
         db.execSQL("CREATE TABLE IF NOT EXISTS `languages` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT, `flagResourceId` INTEGER NOT NULL, `animalResourceId` INTEGER NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `learning_progress` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `userId` INTEGER NOT NULL, `languageId` INTEGER NOT NULL, `currentStreak` INTEGER NOT NULL, `totalPoints` INTEGER NOT NULL, `level` INTEGER NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `lesson_table` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `lessonNumber` INTEGER NOT NULL, `title` TEXT, `language` TEXT, `isPassed` INTEGER NOT NULL)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `grammar_questions` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `category` TEXT, `theoryTitle` TEXT, `theoryContent` TEXT, `theoryStructure` TEXT, `theoryHint` TEXT, `questionType` TEXT, `questionText` TEXT, `optionA` TEXT, `optionB` TEXT, `optionC` TEXT, `optionD` TEXT, `correctAnswer` TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '04feba1fe9410d592e5cff9d531b23d4')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9f0375e1436851ad15e300ffa73c6d25')");
       }
 
       @Override
@@ -56,6 +59,7 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
         db.execSQL("DROP TABLE IF EXISTS `languages`");
         db.execSQL("DROP TABLE IF EXISTS `learning_progress`");
         db.execSQL("DROP TABLE IF EXISTS `lesson_table`");
+        db.execSQL("DROP TABLE IF EXISTS `grammar_questions`");
         final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
         if (_callbacks != null) {
           for (RoomDatabase.Callback _callback : _callbacks) {
@@ -181,9 +185,32 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
                   + " Expected:\n" + _infoLessonTable + "\n"
                   + " Found:\n" + _existingLessonTable);
         }
+        final HashMap<String, TableInfo.Column> _columnsGrammarQuestions = new HashMap<String, TableInfo.Column>(13);
+        _columnsGrammarQuestions.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsGrammarQuestions.put("category", new TableInfo.Column("category", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsGrammarQuestions.put("theoryTitle", new TableInfo.Column("theoryTitle", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsGrammarQuestions.put("theoryContent", new TableInfo.Column("theoryContent", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsGrammarQuestions.put("theoryStructure", new TableInfo.Column("theoryStructure", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsGrammarQuestions.put("theoryHint", new TableInfo.Column("theoryHint", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsGrammarQuestions.put("questionType", new TableInfo.Column("questionType", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsGrammarQuestions.put("questionText", new TableInfo.Column("questionText", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsGrammarQuestions.put("optionA", new TableInfo.Column("optionA", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsGrammarQuestions.put("optionB", new TableInfo.Column("optionB", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsGrammarQuestions.put("optionC", new TableInfo.Column("optionC", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsGrammarQuestions.put("optionD", new TableInfo.Column("optionD", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsGrammarQuestions.put("correctAnswer", new TableInfo.Column("correctAnswer", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysGrammarQuestions = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesGrammarQuestions = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoGrammarQuestions = new TableInfo("grammar_questions", _columnsGrammarQuestions, _foreignKeysGrammarQuestions, _indicesGrammarQuestions);
+        final TableInfo _existingGrammarQuestions = TableInfo.read(db, "grammar_questions");
+        if (!_infoGrammarQuestions.equals(_existingGrammarQuestions)) {
+          return new RoomOpenHelper.ValidationResult(false, "grammar_questions(com.duolingo.app.models.GrammarQuestion).\n"
+                  + " Expected:\n" + _infoGrammarQuestions + "\n"
+                  + " Found:\n" + _existingGrammarQuestions);
+        }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "04feba1fe9410d592e5cff9d531b23d4", "4b8c074729fea7f8ee9c4b5cafa4f58e");
+    }, "9f0375e1436851ad15e300ffa73c6d25", "44d00172d80d6c602d4c062154b80238");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;
@@ -194,7 +221,7 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
   protected InvalidationTracker createInvalidationTracker() {
     final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
     final HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
-    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "vocabulary_table","users","languages","learning_progress","lesson_table");
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "vocabulary_table","users","languages","learning_progress","lesson_table","grammar_questions");
   }
 
   @Override
@@ -208,6 +235,7 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
       _db.execSQL("DELETE FROM `languages`");
       _db.execSQL("DELETE FROM `learning_progress`");
       _db.execSQL("DELETE FROM `lesson_table`");
+      _db.execSQL("DELETE FROM `grammar_questions`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();
@@ -227,6 +255,7 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
     _typeConvertersMap.put(LanguageDao.class, LanguageDao_Impl.getRequiredConverters());
     _typeConvertersMap.put(LearningProgressDao.class, LearningProgressDao_Impl.getRequiredConverters());
     _typeConvertersMap.put(LessonDao.class, LessonDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(GrammarDao.class, GrammarDao_Impl.getRequiredConverters());
     return _typeConvertersMap;
   }
 
@@ -311,6 +340,20 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
           _lessonDao = new LessonDao_Impl(this);
         }
         return _lessonDao;
+      }
+    }
+  }
+
+  @Override
+  public GrammarDao grammarDao() {
+    if (_grammarDao != null) {
+      return _grammarDao;
+    } else {
+      synchronized(this) {
+        if(_grammarDao == null) {
+          _grammarDao = new GrammarDao_Impl(this);
+        }
+        return _grammarDao;
       }
     }
   }

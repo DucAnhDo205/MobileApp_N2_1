@@ -32,8 +32,14 @@
         android:testOnly="true"
         android:theme="@style/Theme.DuolingoApp"
         android:usesCleartextTraffic="true" >
+        <activity android:name="com.duolingo.app.activities.OnboardingActivity" />
+        <activity android:name="com.duolingo.app.activities.LoginActivity" />
+        <activity android:name="com.duolingo.app.activities.RegisterActivity" />
+        <activity android:name="com.duolingo.app.activities.LanguageSelectionActivity" />
+        <activity android:name="com.duolingo.app.activities.SetupGoalActivity" />
+        <activity android:name="com.duolingo.app.activities.StudyPlanActivity" />
         <activity
-            android:name="com.duolingo.app.activities.OnboardingActivity"
+            android:name="com.duolingo.app.activities.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,12 +47,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.duolingo.app.activities.LoginActivity" />
-        <activity android:name="com.duolingo.app.activities.RegisterActivity" />
-        <activity android:name="com.duolingo.app.activities.LanguageSelectionActivity" />
-        <activity android:name="com.duolingo.app.activities.SetupGoalActivity" />
-        <activity android:name="com.duolingo.app.activities.StudyPlanActivity" />
-        <activity android:name="com.duolingo.app.activities.MainActivity" />
+        <activity android:name="com.duolingo.app.activities.GrammarListActivity" />
         <activity
             android:name="com.duolingo.app.activities.FlashcardActivity"
             android:label="Flashcards" />
