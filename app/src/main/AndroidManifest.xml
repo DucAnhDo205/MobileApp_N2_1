@@ -36,6 +36,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.GrammarListActivity" />
+        <activity android:name=".activities.GrammarActivity" />
         <activity
             android:name=".activities.FlashcardActivity"
             android:label="Flashcards" />

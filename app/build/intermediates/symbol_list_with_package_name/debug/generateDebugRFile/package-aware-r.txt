@@ -89,6 +89,7 @@ id button_start
 id cardIconBg
 id card_content
 id card_language
+id card_lesson
 id card_option
 id card_view
 id edit_example
@@ -118,9 +119,12 @@ id input_layout_password
 id input_layout_phone
 id input_layout_username
 id input_layout_word
+id iv_theory_arrow
 id layout_header
 id layout_meaning
 id layout_options
+id layout_theory_content
+id layout_theory_header
 id list_view_categories
 id nav_community
 id nav_profile

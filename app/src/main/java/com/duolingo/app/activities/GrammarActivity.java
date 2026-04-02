@@ -3,7 +3,9 @@ package com.duolingo.app.activities;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,7 +25,14 @@ public class GrammarActivity extends AppCompatActivity {
     // --- Khai báo View ---
     private ImageView btnBack;
     private ProgressBar progressBar;
+
+    // Lý thuyết (Đóng/Mở)
+    private LinearLayout layoutTheoryHeader, layoutTheoryContent;
+    private ImageView ivTheoryArrow;
     private TextView tvTheoryTitle, tvTheoryContent, tvTheoryStructure, tvTheoryHint;
+    private boolean isTheoryExpanded = true; // Trạng thái mở mặc định
+
+    // Câu hỏi & Đáp án
     private TextView tvStep, tvQuestion;
     private MaterialButton btnA, btnB, btnC, btnD, btnCheckAnswer;
 
@@ -31,7 +40,7 @@ public class GrammarActivity extends AppCompatActivity {
     private List<GrammarQuestion> questionList = new ArrayList<>();
     private int currentIndex = 0;
     private String selectedAnswer = "";
-    private boolean isAnswerChecked = false; // Trạng thái: Đã bấm kiểm tra chưa?
+    private boolean isAnswerChecked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,14 +56,20 @@ public class GrammarActivity extends AppCompatActivity {
         btnBack = findViewById(R.id.btn_back);
         progressBar = findViewById(R.id.progress_bar);
 
-        // Header Lý thuyết
-        tvTheoryContent = findViewById(R.id.tv_theory_content); // Em nhớ đặt ID cho các TextView trong thẻ CardView ở file XML nhé
+        // UI Lý thuyết
+        layoutTheoryHeader = findViewById(R.id.layout_theory_header);
+        layoutTheoryContent = findViewById(R.id.layout_theory_content);
+        ivTheoryArrow = findViewById(R.id.iv_theory_arrow);
+        tvTheoryTitle = findViewById(R.id.tv_theory_title);
+        tvTheoryContent = findViewById(R.id.tv_theory_content);
+        tvTheoryStructure = findViewById(R.id.tv_theory_structure);
+        tvTheoryHint = findViewById(R.id.tv_theory_hint);
 
-        // Nội dung câu hỏi
+        // UI Câu hỏi
         tvStep = findViewById(R.id.tv_step);
         tvQuestion = findViewById(R.id.tv_question);
 
-        // 4 Đáp án & Nút Check
+        // UI Nút
         btnA = findViewById(R.id.btn_a);
         btnB = findViewById(R.id.btn_b);
         btnC = findViewById(R.id.btn_c);
@@ -65,81 +80,95 @@ public class GrammarActivity extends AppCompatActivity {
     private void setupListeners() {
         btnBack.setOnClickListener(v -> finish());
 
+        // Logic Đóng/Mở Lý thuyết
+        layoutTheoryHeader.setOnClickListener(v -> {
+            isTheoryExpanded = !isTheoryExpanded;
+            layoutTheoryContent.setVisibility(isTheoryExpanded ? View.VISIBLE : View.GONE);
+            ivTheoryArrow.setRotation(isTheoryExpanded ? 0 : 180); // Xoay mũi tên 180 độ
+        });
+
+        // Click chọn đáp án
         btnA.setOnClickListener(v -> selectOption(btnA));
         btnB.setOnClickListener(v -> selectOption(btnB));
         btnC.setOnClickListener(v -> selectOption(btnC));
         btnD.setOnClickListener(v -> selectOption(btnD));
 
+        // Nút Kiểm tra / Tiếp tục
         btnCheckAnswer.setOnClickListener(v -> {
             if (!isAnswerChecked) {
-                checkAnswer(); // Lần bấm 1: Kiểm tra đúng sai
+                checkAnswer(); // Lần 1: Chấm điểm
             } else {
-                nextQuestion(); // Lần bấm 2: Chuyển câu tiếp theo
+                nextQuestion(); // Lần 2: Qua câu
             }
         });
     }
 
-    // Trong GrammarActivity.java
     private void loadQuestionsFromDB() {
-        // Hứng dữ liệu từ GrammarListActivity gửi qua
         String category = getIntent().getStringExtra("CATEGORY_ID");
-        if (category == null) category = "Present Simple"; // Phòng hờ lỗi thì lấy bài đầu tiên
+        if (category == null || category.isEmpty()) category = "Present Simple";
 
         final String finalCategory = category;
         VocaVerseDatabase db = VocaVerseDatabase.getDatabase(this);
+
         VocaVerseDatabase.databaseWriteExecutor.execute(() -> {
-            // Truy vấn câu hỏi theo đúng cái Category đã chọn
             questionList = db.grammarDao().getQuestionsByCategory(finalCategory);
 
             runOnUiThread(() -> {
                 if (questionList != null && !questionList.isEmpty()) {
                     progressBar.setMax(questionList.size());
+
+                    // Nạp lý thuyết
+                    GrammarQuestion firstQ = questionList.get(0);
+                    tvTheoryTitle.setText("LÝ THUYẾT\n" + firstQ.getTheoryTitle());
+                    tvTheoryContent.setText(firstQ.getTheoryContent());
+                    tvTheoryStructure.setText("Cấu trúc: " + firstQ.getTheoryStructure());
+                    tvTheoryHint.setText("Dấu hiệu: " + firstQ.getTheoryHint());
+
                     displayQuestion(currentIndex);
                 } else {
-                    Toast.makeText(this, "Chưa có dữ liệu bài: " + finalCategory, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Chưa có dữ liệu cho bài: " + finalCategory, Toast.LENGTH_SHORT).show();
+                    //finish();
                 }
             });
         });
     }
 
     private void displayQuestion(int index) {
-        // Reset trạng thái
+        // Reset trạng thái máy
         isAnswerChecked = false;
         selectedAnswer = "";
         btnCheckAnswer.setText("KIỂM TRA ĐÁP ÁN");
-        btnCheckAnswer.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#B4D0FF"))); // Trở về màu gốc
+        btnCheckAnswer.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#B4D0FF")));
         resetButtonStyles();
 
         GrammarQuestion q = questionList.get(index);
 
-        // Đổ dữ liệu lên UI
-        // (Nếu XML của em chưa có ID cho phần lý thuyết, em tạm comment dòng này lại để test câu hỏi trước nhé)
-        // tvTheoryContent.setText(q.getTheoryContent());
-
+        // Update Text
         tvStep.setText("Câu " + (index + 1) + " / " + questionList.size());
-        tvQuestion.setText(q.getQuestionText());
+        tvQuestion.setText(q.getQuestionText().replace("\\n", "\n"));
 
-        btnA.setText(q.getOptionA());
-        btnB.setText(q.getOptionB());
-        btnC.setText(q.getOptionC());
-        btnD.setText(q.getOptionD());
+        // Gán đáp án (Lưu ý: in hoa để giống UI của em)
+        btnA.setText(q.getOptionA().toUpperCase());
+        btnB.setText(q.getOptionB().toUpperCase());
+        btnC.setText(q.getOptionC().toUpperCase());
+        btnD.setText(q.getOptionD().toUpperCase());
 
-        // Update Progress Bar
-        progressBar.setProgress(index);
+        // Update Thanh tiến trình
+        progressBar.setProgress(index + 1);
     }
 
-    // --- Logic chọn 1 đáp án ---
     private void selectOption(MaterialButton selectedBtn) {
-        if (isAnswerChecked) return; // Đã check đáp án rồi thì không cho chọn lại
+        if (isAnswerChecked) return; // Nếu đã check thì cấm đổi đáp án
 
-        resetButtonStyles(); // Xóa viền các nút khác
+        resetButtonStyles();
 
-        // Đổi màu viền và nền nút được chọn thành màu xanh nhạt
+        // Nổi bật nút được chọn (Viền xanh, nền xanh nhạt)
         selectedBtn.setStrokeColor(ColorStateList.valueOf(Color.parseColor("#2196F3")));
         selectedBtn.setStrokeWidth(4);
         selectedBtn.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#E3F2FD")));
 
-        selectedAnswer = selectedBtn.getText().toString();
+        // Lưu lại đáp án (chuyển về chữ thường để so sánh với Database)
+        selectedAnswer = selectedBtn.getText().toString().toLowerCase();
     }
 
     private void resetButtonStyles() {
@@ -147,29 +176,29 @@ public class GrammarActivity extends AppCompatActivity {
         for (MaterialButton btn : buttons) {
             btn.setStrokeColor(ColorStateList.valueOf(Color.parseColor("#E0E0E0")));
             btn.setStrokeWidth(2);
-            btn.setBackgroundTintList(ColorStateList.valueOf(Color.WHITE)); // Nền trắng
+            btn.setBackgroundTintList(ColorStateList.valueOf(Color.WHITE));
         }
     }
 
-    // --- Logic Kiểm tra đúng sai ---
     private void checkAnswer() {
         if (selectedAnswer.isEmpty()) {
-            Toast.makeText(this, "Em chưa chọn đáp án nào!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Hương ơi, chọn một đáp án đã nhé!", Toast.LENGTH_SHORT).show();
             return;
         }
 
         GrammarQuestion currentQ = questionList.get(currentIndex);
-        isAnswerChecked = true; // Chuyển trạng thái
+        isAnswerChecked = true; // Chuyển state sang đã check
 
-        if (selectedAnswer.equals(currentQ.getCorrectAnswer())) {
-            // Đúng: Đổi nút Check thành màu xanh lá
+        // So sánh (dùng equalsIgnoreCase để bỏ qua viết hoa/thường)
+        if (selectedAnswer.trim().equalsIgnoreCase(currentQ.getCorrectAnswer().trim())) {
+            // ĐÚNG: Nút check thành màu Xanh lá
             btnCheckAnswer.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4CAF50")));
-            btnCheckAnswer.setText("CHÍNH XÁC - CÂU TIẾP THEO");
+            btnCheckAnswer.setText("CHÍNH XÁC - TIẾP TỤC");
         } else {
-            // Sai: Đổi nút Check thành màu đỏ
+            // SAI: Nút check thành màu Đỏ
             btnCheckAnswer.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#F44336")));
-            btnCheckAnswer.setText("SAI RỒI - CÂU TIẾP THEO");
-            // Highlight đáp án đúng để học viên biết (Tuỳ chọn bổ sung)
+            btnCheckAnswer.setText("SAI RỒI - TIẾP TỤC");
+            // Gọi hàm tô viền xanh lá cho đáp án đúng để học viên biết
             highlightCorrectAnswer(currentQ.getCorrectAnswer());
         }
     }
@@ -177,24 +206,25 @@ public class GrammarActivity extends AppCompatActivity {
     private void highlightCorrectAnswer(String correctStr) {
         MaterialButton[] buttons = {btnA, btnB, btnC, btnD};
         for (MaterialButton btn : buttons) {
-            if (btn.getText().toString().equals(correctStr)) {
+            // So sánh kĩ chữ hoa/thường
+            if (btn.getText().toString().trim().equalsIgnoreCase(correctStr.trim())) {
                 btn.setStrokeColor(ColorStateList.valueOf(Color.parseColor("#4CAF50")));
-                btn.setStrokeWidth(4);
-                btn.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#E8F5E9")));
+                btn.setStrokeWidth(5);
+                btn.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#E8F5E9"))); // Xanh lá nhạt
             }
         }
     }
 
-    // --- Logic chuyển câu ---
     private void nextQuestion() {
         currentIndex++;
         if (currentIndex < questionList.size()) {
+            // Sang câu tiếp theo
             displayQuestion(currentIndex);
         } else {
-            progressBar.setProgress(questionList.size()); // Full cây
-            Toast.makeText(this, "Chúc mừng em đã hoàn thành bài học!", Toast.LENGTH_LONG).show();
-            // Ở đây em có thể chuyển sang màn hình Report (Báo cáo điểm)
-            finish();
+            // Hết bài
+            progressBar.setProgress(questionList.size());
+            Toast.makeText(this, "Chúc mừng Hương! Em đã hoàn thành chủ đề này xuất sắc!", Toast.LENGTH_LONG).show();
+            finish(); // Đóng màn hình, quay về danh sách
         }
     }
 }

@@ -3265,6 +3265,7 @@ int id cancel_button 0x7f0a007a
 int id cardIconBg 0x7f0a007b
 int id card_content 0x7f0a007c
 int id card_language 0x7f0a007d
+int id card_lesson 0x7f0a0259
 int id card_option 0x7f0a007e
 int id card_view 0x7f0a007f
 int id carryVelocity 0x7f0a0080
@@ -3420,6 +3421,7 @@ int id invisible 0x7f0a0115
 int id inward 0x7f0a0116
 int id italic 0x7f0a0117
 int id item_touch_helper_previous_elevation 0x7f0a0118
+int id iv_theory_arrow 0x7f0a025a
 int id jumpToEnd 0x7f0a0119
 int id jumpToStart 0x7f0a011a
 int id labeled 0x7f0a011b
@@ -3427,6 +3429,8 @@ int id layout 0x7f0a011c
 int id layout_header 0x7f0a011d
 int id layout_meaning 0x7f0a011e
 int id layout_options 0x7f0a011f
+int id layout_theory_content 0x7f0a025b
+int id layout_theory_header 0x7f0a025c
 int id left 0x7f0a0120
 int id leftToRight 0x7f0a0121
 int id legacy 0x7f0a0122

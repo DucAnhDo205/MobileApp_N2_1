@@ -20,6 +20,10 @@
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_item_grammar_lesson.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\item_grammar_lesson.xml"
+    },
+    {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_app_logo_placeholder.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_app_logo_placeholder.xml"
     },
@@ -136,6 +140,10 @@
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\font\\inter.xml"
     },
     {
+        "merged": "com.duolingo.app-debug-34:/layout_activity_grammar.xml.flat",
+        "source": "com.duolingo.app-main-36:/layout/activity_grammar.xml"
+    },
+    {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\menu_main_menu.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\menu\\main_menu.xml"
     },
@@ -180,10 +188,6 @@
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_avatar_placeholder.xml"
     },
     {
-        "merged": "com.duolingo.app-debug-34:/layout_activity_grammar_list.xml.flat",
-        "source": "com.duolingo.app-main-36:/layout/activity_grammar_list.xml"
-    },
-    {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_activity_add_vocabulary.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\activity_add_vocabulary.xml"
     },
@@ -224,10 +228,6 @@
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.duolingo.app-debug-34:/layout_item_grammar_lesson.xml.flat",
-        "source": "com.duolingo.app-main-36:/layout/item_grammar_lesson.xml"
-    },
-    {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_item_goal_option.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\item_goal_option.xml"
     },
@@ -250,6 +250,10 @@
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\mipmap-xxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_activity_grammar_list.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\activity_grammar_list.xml"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_vocaverse_logo.xml.flat",

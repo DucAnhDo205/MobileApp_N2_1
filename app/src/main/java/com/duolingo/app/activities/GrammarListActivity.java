@@ -25,41 +25,44 @@ public class GrammarListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grammar_list);
 
-        // 1. Ánh xạ View
         rvLessons = findViewById(R.id.rv_grammar_lessons);
         btnBack = findViewById(R.id.btn_back_list);
 
-        // 2. Nút quay lại màn hình chính
         btnBack.setOnClickListener(v -> finish());
 
-        // 3. Khởi tạo dữ liệu mẫu (Mock Data)
         initData();
-
-        // 4. Thiết lập danh sách hiển thị
         setupRecyclerView();
-    }
+    } // <--- CHÍNH CÁI NGOẶC NÀY LÀ KẺ GÂY TỘI LỖI ĐÂY!
 
     private void initData() {
         lessonList = new ArrayList<>();
-        // LƯU Ý: Cái ID (Tham số đầu tiên) phải khớp 100% với cột 'category' trong file CSV nhé!
+
+        // --- NHÓM HIỆN TẠI ---
         lessonList.add(new GrammarLesson("Present Simple", "Thì Hiện tại đơn", "Present Simple"));
         lessonList.add(new GrammarLesson("Present Continuous", "Thì Hiện tại tiếp diễn", "Present Continuous"));
+        lessonList.add(new GrammarLesson("Present Perfect", "Thì Hiện tại hoàn thành", "Present Perfect"));
+        lessonList.add(new GrammarLesson("Present Perfect Continuous", "Thì Hiện tại HT tiếp diễn", "Present Perfect Continuous"));
+
+        // --- NHÓM QUÁ KHỨ ---
         lessonList.add(new GrammarLesson("Past Simple", "Thì Quá khứ đơn", "Past Simple"));
         lessonList.add(new GrammarLesson("Past Continuous", "Thì Quá khứ tiếp diễn", "Past Continuous"));
-        lessonList.add(new GrammarLesson("Present Perfect", "Thì Hiện tại hoàn thành", "Present Perfect"));
+        lessonList.add(new GrammarLesson("Past Perfect", "Thì Quá khứ hoàn thành", "Past Perfect"));
+        lessonList.add(new GrammarLesson("Past Perfect Continuous", "Thì Quá khứ HT tiếp diễn", "Past Perfect Continuous"));
+
+        // --- NHÓM TƯƠNG LAI ---
         lessonList.add(new GrammarLesson("Future Simple", "Thì Tương lai đơn", "Future Simple"));
+        lessonList.add(new GrammarLesson("Future Continuous", "Thì Tương lai tiếp diễn", "Future Continuous"));
+        lessonList.add(new GrammarLesson("Future Perfect", "Thì Tương lai hoàn thành", "Future Perfect"));
+        lessonList.add(new GrammarLesson("Future Perfect Continuous", "Thì Tương lai HT tiếp diễn", "Future Perfect Continuous"));
     }
 
     private void setupRecyclerView() {
-        // Khởi tạo Adapter và bắt sự kiện Click
         GrammarLessonAdapter adapter = new GrammarLessonAdapter(lessonList, lesson -> {
-            // MẤU CHỐT: Bấm vào bài nào, gửi ID bài đó sang GrammarActivity
             Intent intent = new Intent(GrammarListActivity.this, GrammarActivity.class);
             intent.putExtra("CATEGORY_ID", lesson.getCategoryId());
             startActivity(intent);
         });
 
-        // Gắn Layout kiểu danh sách dọc
         rvLessons.setLayoutManager(new LinearLayoutManager(this));
         rvLessons.setAdapter(adapter);
     }

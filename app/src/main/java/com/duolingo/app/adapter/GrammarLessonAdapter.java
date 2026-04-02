@@ -41,12 +41,11 @@ public class GrammarLessonAdapter extends RecyclerView.Adapter<GrammarLessonAdap
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         GrammarLesson lesson = lessonList.get(position);
 
-        // Nhồi dữ liệu vào View
         holder.tvTitle.setText(lesson.getTitle());
         holder.tvDesc.setText(lesson.getDescription());
 
-        // Lắng nghe sự kiện click: Bấm phát là gửi cái lesson đó ra ngoài
-        holder.itemView.setOnClickListener(v -> listener.onItemClick(lesson));
+        // CHỐT CHẶN Ở ĐÂY: Gắn sự kiện click thẳng vào cái CardView có ID đàng hoàng
+        holder.cardLesson.setOnClickListener(v -> listener.onItemClick(lesson));
     }
 
     @Override
@@ -57,11 +56,13 @@ public class GrammarLessonAdapter extends RecyclerView.Adapter<GrammarLessonAdap
     // Ánh xạ View của từng dòng
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvTitle, tvDesc;
+        View cardLesson; // Khai báo thêm biến này
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tv_lesson_title);
             tvDesc = itemView.findViewById(R.id.tv_lesson_desc);
+            cardLesson = itemView.findViewById(R.id.card_lesson); // Ánh xạ nó
         }
     }
 }

@@ -17,4 +17,8 @@ public interface GrammarDao {
     // Đếm xem trong bảng có dữ liệu chưa để khỏi phải nạp lại CSV nhiều lần
     @Query("SELECT COUNT(*) FROM grammar_questions")
     int getCount();
+
+    // Lệnh SQL gom nhóm: Tự động nhả ra danh sách các Category (không bị trùng lặp)
+    @Query("SELECT * FROM grammar_questions GROUP BY category")
+    List<GrammarQuestion> getAllCategories();
 }
