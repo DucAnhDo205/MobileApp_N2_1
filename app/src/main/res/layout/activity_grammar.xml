@@ -26,12 +26,13 @@
             android:id="@+id/progress_bar"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="10dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:layout_weight="1"
             android:max="15"
             android:progress="1"
+            android:progressDrawable="@drawable/bg_rounded_progress"
             android:progressTint="#FFC107" />
 
         <ImageView

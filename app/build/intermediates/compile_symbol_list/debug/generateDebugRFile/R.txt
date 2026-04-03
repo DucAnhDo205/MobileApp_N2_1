@@ -26,6 +26,7 @@ int drawable bg_nav_item_selected 0x0
 int drawable bg_onboarding 0x0
 int drawable bg_radio_selector 0x0
 int drawable bg_rounded_gray 0x0
+int drawable bg_rounded_progress 0x0
 int drawable bg_selection_item 0x0
 int drawable bg_tag 0x0
 int drawable flag_of_the_united_kingdom 0x0

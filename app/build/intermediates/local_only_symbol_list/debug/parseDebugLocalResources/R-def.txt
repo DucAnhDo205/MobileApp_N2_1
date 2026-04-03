@@ -28,6 +28,7 @@ drawable bg_nav_item_selected
 drawable bg_onboarding
 drawable bg_radio_selector
 drawable bg_rounded_gray
+drawable bg_rounded_progress
 drawable bg_selection_item
 drawable bg_tag
 drawable flag_of_the_united_kingdom

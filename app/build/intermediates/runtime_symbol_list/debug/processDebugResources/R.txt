@@ -2995,6 +2995,7 @@ int drawable bg_nav_item_selected 0x7f08007c
 int drawable bg_onboarding 0x7f08007d
 int drawable bg_radio_selector 0x7f08007e
 int drawable bg_rounded_gray 0x7f08007f
+int drawable bg_rounded_progress 0x7f08010d
 int drawable bg_selection_item 0x7f080080
 int drawable bg_tag 0x7f080081
 int drawable btn_checkbox_checked_mtrl 0x7f080082
