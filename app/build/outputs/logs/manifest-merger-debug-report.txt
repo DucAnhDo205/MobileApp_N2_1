@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:2:1-51:12
-INJECTED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:2:1-51:12
-INJECTED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:2:1-51:12
-INJECTED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:2:1-51:12
+ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:2:1-52:12
+INJECTED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:2:1-52:12
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\2b289ca0657079b2a37c3c34cdb78a23\workspace\transformed\material-1.11.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\admin\.gradle\caches\9.3.1\transforms\8fb6887cf6058945b234234d9497f656\workspace\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\admin\.gradle\caches\9.3.1\transforms\bca0d568d4f11b352ca581ba5d930944\workspace\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
@@ -72,8 +72,8 @@ ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\Andr
 	android:name
 		ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:7:22-76
 application
-ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:9:5-49:19
-INJECTED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:9:5-49:19
+ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:9:5-50:19
+INJECTED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:9:5-50:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\2b289ca0657079b2a37c3c34cdb78a23\workspace\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\admin\.gradle\caches\9.3.1\transforms\2b289ca0657079b2a37c3c34cdb78a23\workspace\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\admin\.gradle\caches\9.3.1\transforms\8fb6887cf6058945b234234d9497f656\workspace\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -164,22 +164,26 @@ activity#com.duolingo.app.activities.GrammarActivity
 ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:39:9-64
 	android:name
 		ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:39:19-61
+activity#com.duolingo.app.activities.PracticeActivity
+ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:40:9-65
+	android:name
+		ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:40:19-62
 activity#com.duolingo.app.activities.FlashcardActivity
-ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:40:9-42:42
+ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:41:9-43:42
 	android:label
-		ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:42:13-39
+		ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:43:13-39
 	android:name
-		ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:41:13-57
+		ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:42:13-57
 activity#com.duolingo.app.activities.AddVocabularyActivity
-ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:43:9-45:40
+ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:44:9-46:40
 	android:label
-		ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:45:13-37
+		ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:46:13-37
 	android:name
-		ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:44:13-61
+		ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:45:13-61
 receiver#com.duolingo.app.services.NotificationReceiver
-ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:47:9-67
+ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:48:9-67
 	android:name
-		ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:47:19-64
+		ADDED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml:48:19-64
 uses-sdk
 INJECTED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\admin\AndroidStudioProjects\MobileApp_N2_1\app\src\main\AndroidManifest.xml

@@ -72,9 +72,15 @@ id btn_a
 id btn_b
 id btn_back
 id btn_back_list
+id btn_back_practice
 id btn_c
 id btn_check_answer
 id btn_d
+id btn_item_a
+id btn_item_b
+id btn_item_c
+id btn_item_d
+id btn_submit_exam
 id button_audio
 id button_correct
 id button_get_started
@@ -126,6 +132,7 @@ id layout_feedback_bottom
 id layout_feedback_message
 id layout_meaning
 id layout_options
+id layout_question_container
 id layout_theory_content
 id layout_theory_header
 id list_view_categories
@@ -135,6 +142,7 @@ id nav_study
 id nav_test
 id progressBarGrammar
 id progress_bar
+id progress_bar_practice
 id radio_easy
 id radio_group_plan
 id radio_hard
@@ -170,6 +178,8 @@ id tvDescription
 id tvTitle
 id tv_feedback_subtitle
 id tv_feedback_title
+id tv_item_question
+id tv_item_step
 id tv_lesson_desc
 id tv_lesson_title
 id tv_question
@@ -182,6 +192,7 @@ layout activity_add_vocabulary
 layout activity_flashcard
 layout activity_grammar
 layout activity_grammar_list
+layout activity_grammar_practice
 layout activity_language_selection
 layout activity_login
 layout activity_main
@@ -193,6 +204,7 @@ layout activity_study_plan
 layout item_goal_option
 layout item_grammar_lesson
 layout item_language
+layout item_practice_question
 layout item_study_module
 menu bottom_nav_menu
 menu main_menu

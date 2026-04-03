@@ -80,6 +80,10 @@
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_vocabulary.xml"
     },
     {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_activity_grammar_practice.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\activity_grammar_practice.xml"
+    },
+    {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_item_study_module.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\item_study_module.xml"
     },
@@ -120,8 +124,16 @@
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_rank.xml"
     },
     {
+        "merged": "com.duolingo.app-debug-34:/layout_item_practice_question.xml.flat",
+        "source": "com.duolingo.app-main-36:/layout/item_practice_question.xml"
+    },
+    {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "com.duolingo.app-debug-34:/layout_activity_grammar_practice.xml.flat",
+        "source": "com.duolingo.app-main-36:/layout/activity_grammar_practice.xml"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_activity_setup_goal.xml.flat",
@@ -146,10 +158,6 @@
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\font_inter.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\font\\inter.xml"
-    },
-    {
-        "merged": "com.duolingo.app-debug-34:/layout_activity_grammar.xml.flat",
-        "source": "com.duolingo.app-main-36:/layout/activity_grammar.xml"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\menu_main_menu.xml.flat",

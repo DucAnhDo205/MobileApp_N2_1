@@ -3244,9 +3244,15 @@ int id btn_a 0x7f0a0064
 int id btn_b 0x7f0a0065
 int id btn_back 0x7f0a0066
 int id btn_back_list 0x7f0a0255
+int id btn_back_practice 0x7f0a0264
 int id btn_c 0x7f0a0067
 int id btn_check_answer 0x7f0a0068
 int id btn_d 0x7f0a0069
+int id btn_item_a 0x7f0a0270
+int id btn_item_b 0x7f0a0271
+int id btn_item_c 0x7f0a0272
+int id btn_item_d 0x7f0a0273
+int id btn_submit_exam 0x7f0a0274
 int id buttonPanel 0x7f0a006b
 int id button_audio 0x7f0a006c
 int id button_correct 0x7f0a006d
@@ -3432,6 +3438,7 @@ int id layout_feedback_bottom 0x7f0a025e
 int id layout_feedback_message 0x7f0a025f
 int id layout_meaning 0x7f0a011e
 int id layout_options 0x7f0a011f
+int id layout_question_container 0x7f0a0275
 int id layout_theory_content 0x7f0a025b
 int id layout_theory_header 0x7f0a025c
 int id left 0x7f0a0120
@@ -3562,6 +3569,7 @@ int id postLayout 0x7f0a019c
 int id pressed 0x7f0a019d
 int id progressBarGrammar 0x7f0a019e
 int id progress_bar 0x7f0a019f
+int id progress_bar_practice 0x7f0a026b
 int id progress_circular 0x7f0a01a0
 int id progress_horizontal 0x7f0a01a1
 int id radio 0x7f0a01a2
@@ -3717,6 +3725,8 @@ int id tvDescription 0x7f0a0236
 int id tvTitle 0x7f0a0237
 int id tv_feedback_subtitle 0x7f0a0260
 int id tv_feedback_title 0x7f0a0261
+int id tv_item_question 0x7f0a0276
+int id tv_item_step 0x7f0a0277
 int id tv_lesson_desc 0x7f0a0257
 int id tv_lesson_title 0x7f0a0258
 int id tv_question 0x7f0a0238
@@ -3866,6 +3876,7 @@ int layout activity_add_vocabulary 0x7f0d001c
 int layout activity_flashcard 0x7f0d001d
 int layout activity_grammar 0x7f0d001e
 int layout activity_grammar_list 0x7f0d0079
+int layout activity_grammar_practice 0x7f0d007b
 int layout activity_language_selection 0x7f0d001f
 int layout activity_login 0x7f0d0020
 int layout activity_main 0x7f0d0021
@@ -3895,6 +3906,7 @@ int layout ime_secondary_split_test_activity 0x7f0d0038
 int layout item_goal_option 0x7f0d0039
 int layout item_grammar_lesson 0x7f0d007a
 int layout item_language 0x7f0d003a
+int layout item_practice_question 0x7f0d007c
 int layout item_study_module 0x7f0d003b
 int layout m3_alert_dialog 0x7f0d003c
 int layout m3_alert_dialog_actions 0x7f0d003d

@@ -49,6 +49,7 @@
         </activity>
         <activity android:name="com.duolingo.app.activities.GrammarListActivity" />
         <activity android:name="com.duolingo.app.activities.GrammarActivity" />
+        <activity android:name="com.duolingo.app.activities.PracticeActivity" />
         <activity
             android:name="com.duolingo.app.activities.FlashcardActivity"
             android:label="Flashcards" />

@@ -71,9 +71,15 @@ int id btn_a 0x0
 int id btn_b 0x0
 int id btn_back 0x0
 int id btn_back_list 0x0
+int id btn_back_practice 0x0
 int id btn_c 0x0
 int id btn_check_answer 0x0
 int id btn_d 0x0
+int id btn_item_a 0x0
+int id btn_item_b 0x0
+int id btn_item_c 0x0
+int id btn_item_d 0x0
+int id btn_submit_exam 0x0
 int id button_audio 0x0
 int id button_correct 0x0
 int id button_get_started 0x0
@@ -125,6 +131,7 @@ int id layout_feedback_bottom 0x0
 int id layout_feedback_message 0x0
 int id layout_meaning 0x0
 int id layout_options 0x0
+int id layout_question_container 0x0
 int id layout_theory_content 0x0
 int id layout_theory_header 0x0
 int id list_view_categories 0x0
@@ -134,6 +141,7 @@ int id nav_study 0x0
 int id nav_test 0x0
 int id progressBarGrammar 0x0
 int id progress_bar 0x0
+int id progress_bar_practice 0x0
 int id radio_easy 0x0
 int id radio_group_plan 0x0
 int id radio_hard 0x0
@@ -169,6 +177,8 @@ int id tvDescription 0x0
 int id tvTitle 0x0
 int id tv_feedback_subtitle 0x0
 int id tv_feedback_title 0x0
+int id tv_item_question 0x0
+int id tv_item_step 0x0
 int id tv_lesson_desc 0x0
 int id tv_lesson_title 0x0
 int id tv_question 0x0
@@ -181,6 +191,7 @@ int layout activity_add_vocabulary 0x0
 int layout activity_flashcard 0x0
 int layout activity_grammar 0x0
 int layout activity_grammar_list 0x0
+int layout activity_grammar_practice 0x0
 int layout activity_language_selection 0x0
 int layout activity_login 0x0
 int layout activity_main 0x0
@@ -192,6 +203,7 @@ int layout activity_study_plan 0x0
 int layout item_goal_option 0x0
 int layout item_grammar_lesson 0x0
 int layout item_language 0x0
+int layout item_practice_question 0x0
 int layout item_study_module 0x0
 int menu bottom_nav_menu 0x0
 int menu main_menu 0x0

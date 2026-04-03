@@ -16,12 +16,18 @@ import com.duolingo.app.R;
 import com.duolingo.app.models.GrammarQuestion;
 import com.duolingo.app.persistence.VocaVerseDatabase;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class GrammarActivity extends AppCompatActivity {
+
+    // Biến kiểm soát chế độ
+    private boolean isPracticeMode = false;
+    private int practiceScore = 0;          // Điểm số cho phần luyện tập
+    private List<GrammarQuestion> originalPool = new ArrayList<>(); // Kho 30 câu gốc
 
     // --- Khai báo View ---
     private ImageView btnBack;
@@ -224,7 +230,7 @@ public class GrammarActivity extends AppCompatActivity {
     private void checkAnswer() {
         // Chặn lỗi người dùng bấm Kiểm tra khi chưa chọn đáp án
         if (selectedAnswer.isEmpty()) {
-            Toast.makeText(this, "Em chưa chọn đáp án nào!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Bạn chưa chọn đáp án nào!", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -282,13 +288,75 @@ public class GrammarActivity extends AppCompatActivity {
     private void nextQuestion() {
         currentIndex++;
         if (currentIndex < questionList.size()) {
-            // Sang câu tiếp theo
             displayQuestion(currentIndex);
         } else {
-            // Hết bài
-            progressBar.setProgress(questionList.size());
-            Toast.makeText(this, "Chúc mừng em đã hoàn thành chủ đề này xuất sắc!", Toast.LENGTH_LONG).show();
-            finish(); // Đóng màn hình, quay về danh sách
+            // Hết 15 câu học -> Chuyển thẳng sang Activity Luyện tập
+            String currentCategory = getIntent().getStringExtra("CATEGORY_ID");
+
+            new MaterialAlertDialogBuilder(this)
+                    .setTitle("Chúc mừng bạn! 🎉")
+                    .setMessage("Bạn đã hoàn thành xuất sắc 15 câu lý thuyết. Giờ mình làm bài Test 20 câu để tổng hợp kiến thức nhé?")
+                    .setCancelable(false)
+                    .setPositiveButton("TEST LUÔN", (dialog, which) -> {
+                        // Dùng Intent truyền dữ liệu và chuyển trang
+                        android.content.Intent intent = new android.content.Intent(GrammarActivity.this, PracticeActivity.class);
+                        intent.putExtra("CATEGORY_ID", currentCategory);
+                        startActivity(intent);
+                        finish(); // Đóng phòng học
+                    })
+                    .setNegativeButton("NGHỈ NGƠI", (dialog, which) -> finish())
+                    .show();
         }
+    }
+
+    private void showFinalScore() {
+        new com.google.android.material.dialog.MaterialAlertDialogBuilder(this)
+                .setTitle("KẾT QUẢ TEST")
+                .setMessage("Bạn đã đạt được: " + practiceScore + "/" + questionList.size() + " điểm!")
+                .setPositiveButton("HOÀN THÀNH", (dialog, which) -> finish())
+                .setCancelable(false)
+                .show();
+    }
+
+    private void showCompletionDialog() {
+        new com.google.android.material.dialog.MaterialAlertDialogBuilder(this)
+                .setTitle("Chúc mừng bạn!")
+                .setMessage("Bạn đã hoàn thành xuất sắc 15 câu lý thuyết. Giờ mình làm bài Test 20 câu để tổng hợp kiến thức nhé?")
+                .setCancelable(false) // Không cho thoát ngang
+                .setPositiveButton("TEST LUÔN", (dialog, which) -> {
+                    startPracticeMode(); // Chuyển sang chế độ luyện tập
+                })
+                .setNegativeButton("NGHỈ NGƠI", (dialog, which) -> {
+                    finish(); // Quay về danh sách
+                })
+                .show();
+    }
+
+    private void startPracticeMode() {
+        isPracticeMode = true;
+        currentIndex = 0;
+        practiceScore = 0;
+
+        // 1. Ẩn vĩnh viễn phần lý thuyết
+        layoutTheoryHeader.setVisibility(View.GONE);
+        layoutTheoryContent.setVisibility(View.GONE);
+
+        // 2. Trộn lại kho 30 câu và lấy ra 20 câu ngẫu nhiên
+        List<GrammarQuestion> practiceList = new ArrayList<>(originalPool);
+        Collections.shuffle(practiceList);
+        if (practiceList.size() > 20) {
+            questionList = practiceList.subList(0, 20);
+        } else {
+            questionList = practiceList;
+        }
+
+        // 3. Cập nhật thanh tiến trình sang màu khác (ví dụ màu Cam)
+        progressBar.setMax(questionList.size());
+        progressBar.setProgressTintList(ColorStateList.valueOf(Color.parseColor("#FF9800")));
+
+        // 4. Bắt đầu hiển thị câu hỏi đầu tiên của bài Test
+        displayQuestion(currentIndex);
+
+        Toast.makeText(this, "BẮT ĐẦU BÀI KIỂM TRA 20 CÂU!", Toast.LENGTH_SHORT).show();
     }
 }
