@@ -72,6 +72,10 @@
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\raw\\listen_c1_01.mp3"
     },
     {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_pause.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_pause.xml"
+    },
+    {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_bulb.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_bulb.xml"
     },
@@ -102,6 +106,10 @@
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_item_practice_question.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\item_practice_question.xml"
+    },
+    {
+        "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\layout_activity_pronounciation_list.xml.flat",
+        "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\layout\\activity_pronounciation_list.xml"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_headphone.xml.flat",
@@ -162,10 +170,6 @@
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_ic_flag_china.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\ic_flag_china.xml"
-    },
-    {
-        "merged": "com.duolingo.app-debug-34:/drawable_ic_pause.xml.flat",
-        "source": "com.duolingo.app-main-36:/drawable/ic_pause.xml"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\raw_listen_a1_01.mp3.flat",
@@ -310,6 +314,10 @@
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\drawable_bg_icon_blue.xml.flat",
         "source": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-main-36:\\drawable\\bg_icon_blue.xml"
+    },
+    {
+        "merged": "com.duolingo.app-debug-34:/layout_activity_pronunciation_list.xml.flat",
+        "source": "com.duolingo.app-main-36:/layout/activity_pronunciation_list.xml"
     },
     {
         "merged": "C:\\Users\\admin\\.gradle\\daemon\\9.3.1\\com.duolingo.app-debug-34:\\animator_flashcard_flip_back.xml.flat",

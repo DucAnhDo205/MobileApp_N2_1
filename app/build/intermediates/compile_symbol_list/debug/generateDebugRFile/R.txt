@@ -159,6 +159,7 @@ int id radio_group_plan 0x0
 int id radio_hard 0x0
 int id radio_normal 0x0
 int id recycler_view_languages 0x0
+int id rvPronunciationLevels 0x0
 int id rvStudyModules 0x0
 int id rv_grammar_lessons 0x0
 int id seekbar_audio 0x0
@@ -186,6 +187,7 @@ int id text_title 0x0
 int id text_user_name 0x0
 int id text_word 0x0
 int id toolbar 0x0
+int id toolbar_pronunciation 0x0
 int id tvDescription 0x0
 int id tvTitle 0x0
 int id tv_audio_time 0x0
@@ -214,6 +216,7 @@ int layout activity_listening_list 0x0
 int layout activity_login 0x0
 int layout activity_main 0x0
 int layout activity_onboarding 0x0
+int layout activity_pronunciation_list 0x0
 int layout activity_register 0x0
 int layout activity_setup_goal 0x0
 int layout activity_study 0x0

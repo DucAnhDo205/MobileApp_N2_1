@@ -114,6 +114,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, ListeningListActivity.class);
                 startActivity(intent);
             }
+            else if (module.getId().equals("pronunciation")) {
+                Intent intent = new Intent(MainActivity.this, PronunciationListActivity.class);
+                startActivity(intent);
+            }
         });
 
         rvStudyModules.setLayoutManager(new GridLayoutManager(this, 2));

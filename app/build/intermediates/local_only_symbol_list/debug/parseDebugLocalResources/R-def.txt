@@ -161,6 +161,7 @@ id radio_group_plan
 id radio_hard
 id radio_normal
 id recycler_view_languages
+id rvPronunciationLevels
 id rvStudyModules
 id rv_grammar_lessons
 id seekbar_audio
@@ -188,6 +189,7 @@ id text_title
 id text_user_name
 id text_word
 id toolbar
+id toolbar_pronunciation
 id tvDescription
 id tvTitle
 id tv_audio_time
@@ -216,6 +218,7 @@ layout activity_listening_list
 layout activity_login
 layout activity_main
 layout activity_onboarding
+layout activity_pronunciation_list
 layout activity_register
 layout activity_setup_goal
 layout activity_study

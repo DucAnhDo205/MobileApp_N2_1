@@ -40,6 +40,7 @@
         <activity android:name=".activities.PracticeActivity" />
         <activity android:name=".activities.ListeningListActivity" />
         <activity android:name=".activities.ListeningActivity" />
+        <activity android:name=".activities.PronunciationListActivity" />
         <activity
             android:name=".activities.FlashcardActivity"
             android:label="Flashcards" />

@@ -3600,6 +3600,7 @@ int id right_icon 0x7f0a01ae
 int id right_side 0x7f0a01af
 int id rounded 0x7f0a01b0
 int id row_index_key 0x7f0a01b1
+int id rvPronunciationLevels 0x7f0a0285
 int id rvStudyModules 0x7f0a01b2
 int id rv_grammar_lessons 0x7f0a0256
 int id save_non_transition_alpha 0x7f0a01b3
@@ -3723,6 +3724,7 @@ int id titleDividerNoCustom 0x7f0a0227
 int id title_template 0x7f0a0228
 int id toggle 0x7f0a0229
 int id toolbar 0x7f0a022a
+int id toolbar_pronunciation 0x7f0a0286
 int id top 0x7f0a022b
 int id topPanel 0x7f0a022c
 int id touch_outside 0x7f0a022d
@@ -3899,6 +3901,7 @@ int layout activity_listening_list 0x7f0d007e
 int layout activity_login 0x7f0d0020
 int layout activity_main 0x7f0d0021
 int layout activity_onboarding 0x7f0d0022
+int layout activity_pronunciation_list 0x7f0d0080
 int layout activity_register 0x7f0d0023
 int layout activity_setup_goal 0x7f0d0024
 int layout activity_study 0x7f0d0025

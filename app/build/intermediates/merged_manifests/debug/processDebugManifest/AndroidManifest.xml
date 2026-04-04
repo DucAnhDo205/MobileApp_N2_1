@@ -52,6 +52,7 @@
         <activity android:name="com.duolingo.app.activities.PracticeActivity" />
         <activity android:name="com.duolingo.app.activities.ListeningListActivity" />
         <activity android:name="com.duolingo.app.activities.ListeningActivity" />
+        <activity android:name="com.duolingo.app.activities.PronunciationListActivity" />
         <activity
             android:name="com.duolingo.app.activities.FlashcardActivity"
             android:label="Flashcards" />
