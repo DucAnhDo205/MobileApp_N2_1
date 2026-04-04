@@ -12,11 +12,12 @@ import com.duolingo.app.models.LearningProgress;
 import com.duolingo.app.models.Lesson;
 import com.duolingo.app.models.User;
 import com.duolingo.app.models.VocabularyItem;
+import com.duolingo.app.models.ListeningQuestion;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {VocabularyItem.class, User.class, Language.class, LearningProgress.class, Lesson.class, GrammarQuestion.class}, version = 7, exportSchema = false)
+@Database(entities = {VocabularyItem.class, User.class, Language.class, LearningProgress.class, Lesson.class, GrammarQuestion.class, ListeningQuestion.class}, version = 8, exportSchema = false)
 public abstract class VocaVerseDatabase extends RoomDatabase {
 
     public abstract VocabularyDao vocabularyDao();
@@ -25,6 +26,7 @@ public abstract class VocaVerseDatabase extends RoomDatabase {
     public abstract LearningProgressDao learningProgressDao();
     public abstract LessonDao lessonDao();
     public abstract GrammarDao grammarDao();
+    public abstract ListeningDao listeningDao();
 
     private static volatile VocaVerseDatabase INSTANCE;
     private static final int NUMBER_OF_THREADS = 4;

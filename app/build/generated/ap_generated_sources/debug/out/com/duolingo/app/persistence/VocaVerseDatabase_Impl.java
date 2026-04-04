@@ -36,10 +36,12 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
 
   private volatile GrammarDao _grammarDao;
 
+  private volatile ListeningDao _listeningDao;
+
   @Override
   @NonNull
   protected SupportSQLiteOpenHelper createOpenHelper(@NonNull final DatabaseConfiguration config) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(7) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(config, new RoomOpenHelper.Delegate(8) {
       @Override
       public void createAllTables(@NonNull final SupportSQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS `vocabulary_table` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `word` TEXT, `meaning` TEXT, `example` TEXT, `language` TEXT, `category` TEXT, `lessonNumber` INTEGER NOT NULL, `nextReviewDate` INTEGER NOT NULL, `interval` INTEGER NOT NULL, `easeFactor` REAL NOT NULL)");
@@ -48,8 +50,9 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
         db.execSQL("CREATE TABLE IF NOT EXISTS `learning_progress` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `userId` INTEGER NOT NULL, `languageId` INTEGER NOT NULL, `currentStreak` INTEGER NOT NULL, `totalPoints` INTEGER NOT NULL, `level` INTEGER NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `lesson_table` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `lessonNumber` INTEGER NOT NULL, `title` TEXT, `language` TEXT, `isPassed` INTEGER NOT NULL)");
         db.execSQL("CREATE TABLE IF NOT EXISTS `grammar_questions` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `category` TEXT, `theoryTitle` TEXT, `theoryContent` TEXT, `theoryStructure` TEXT, `theoryHint` TEXT, `questionType` TEXT, `questionText` TEXT, `optionA` TEXT, `optionB` TEXT, `optionC` TEXT, `optionD` TEXT, `correctAnswer` TEXT)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS `listening_questions` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `level` TEXT, `audioFile` TEXT, `transcript` TEXT, `q1Text` TEXT, `q1A` TEXT, `q1B` TEXT, `q1C` TEXT, `q1D` TEXT, `q1Correct` TEXT, `q2Text` TEXT, `q2A` TEXT, `q2B` TEXT, `q2C` TEXT, `q2D` TEXT, `q2Correct` TEXT, `q3Text` TEXT, `q3A` TEXT, `q3B` TEXT, `q3C` TEXT, `q3D` TEXT, `q3Correct` TEXT, `q4Text` TEXT, `q4A` TEXT, `q4B` TEXT, `q4C` TEXT, `q4D` TEXT, `q4Correct` TEXT)");
         db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9f0375e1436851ad15e300ffa73c6d25')");
+        db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3f7c10415c08c3d0f0def9ff5978510b')");
       }
 
       @Override
@@ -60,6 +63,7 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
         db.execSQL("DROP TABLE IF EXISTS `learning_progress`");
         db.execSQL("DROP TABLE IF EXISTS `lesson_table`");
         db.execSQL("DROP TABLE IF EXISTS `grammar_questions`");
+        db.execSQL("DROP TABLE IF EXISTS `listening_questions`");
         final List<? extends RoomDatabase.Callback> _callbacks = mCallbacks;
         if (_callbacks != null) {
           for (RoomDatabase.Callback _callback : _callbacks) {
@@ -208,9 +212,47 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
                   + " Expected:\n" + _infoGrammarQuestions + "\n"
                   + " Found:\n" + _existingGrammarQuestions);
         }
+        final HashMap<String, TableInfo.Column> _columnsListeningQuestions = new HashMap<String, TableInfo.Column>(28);
+        _columnsListeningQuestions.put("id", new TableInfo.Column("id", "INTEGER", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("level", new TableInfo.Column("level", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("audioFile", new TableInfo.Column("audioFile", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("transcript", new TableInfo.Column("transcript", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q1Text", new TableInfo.Column("q1Text", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q1A", new TableInfo.Column("q1A", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q1B", new TableInfo.Column("q1B", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q1C", new TableInfo.Column("q1C", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q1D", new TableInfo.Column("q1D", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q1Correct", new TableInfo.Column("q1Correct", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q2Text", new TableInfo.Column("q2Text", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q2A", new TableInfo.Column("q2A", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q2B", new TableInfo.Column("q2B", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q2C", new TableInfo.Column("q2C", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q2D", new TableInfo.Column("q2D", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q2Correct", new TableInfo.Column("q2Correct", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q3Text", new TableInfo.Column("q3Text", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q3A", new TableInfo.Column("q3A", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q3B", new TableInfo.Column("q3B", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q3C", new TableInfo.Column("q3C", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q3D", new TableInfo.Column("q3D", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q3Correct", new TableInfo.Column("q3Correct", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q4Text", new TableInfo.Column("q4Text", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q4A", new TableInfo.Column("q4A", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q4B", new TableInfo.Column("q4B", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q4C", new TableInfo.Column("q4C", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q4D", new TableInfo.Column("q4D", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsListeningQuestions.put("q4Correct", new TableInfo.Column("q4Correct", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysListeningQuestions = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesListeningQuestions = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoListeningQuestions = new TableInfo("listening_questions", _columnsListeningQuestions, _foreignKeysListeningQuestions, _indicesListeningQuestions);
+        final TableInfo _existingListeningQuestions = TableInfo.read(db, "listening_questions");
+        if (!_infoListeningQuestions.equals(_existingListeningQuestions)) {
+          return new RoomOpenHelper.ValidationResult(false, "listening_questions(com.duolingo.app.models.ListeningQuestion).\n"
+                  + " Expected:\n" + _infoListeningQuestions + "\n"
+                  + " Found:\n" + _existingListeningQuestions);
+        }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "9f0375e1436851ad15e300ffa73c6d25", "44d00172d80d6c602d4c062154b80238");
+    }, "3f7c10415c08c3d0f0def9ff5978510b", "7f14b3daadeb12445147f42765f7784c");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(config.context).name(config.name).callback(_openCallback).build();
     final SupportSQLiteOpenHelper _helper = config.sqliteOpenHelperFactory.create(_sqliteConfig);
     return _helper;
@@ -221,7 +263,7 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
   protected InvalidationTracker createInvalidationTracker() {
     final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
     final HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
-    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "vocabulary_table","users","languages","learning_progress","lesson_table","grammar_questions");
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "vocabulary_table","users","languages","learning_progress","lesson_table","grammar_questions","listening_questions");
   }
 
   @Override
@@ -236,6 +278,7 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
       _db.execSQL("DELETE FROM `learning_progress`");
       _db.execSQL("DELETE FROM `lesson_table`");
       _db.execSQL("DELETE FROM `grammar_questions`");
+      _db.execSQL("DELETE FROM `listening_questions`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();
@@ -256,6 +299,7 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
     _typeConvertersMap.put(LearningProgressDao.class, LearningProgressDao_Impl.getRequiredConverters());
     _typeConvertersMap.put(LessonDao.class, LessonDao_Impl.getRequiredConverters());
     _typeConvertersMap.put(GrammarDao.class, GrammarDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(ListeningDao.class, ListeningDao_Impl.getRequiredConverters());
     return _typeConvertersMap;
   }
 
@@ -354,6 +398,20 @@ public final class VocaVerseDatabase_Impl extends VocaVerseDatabase {
           _grammarDao = new GrammarDao_Impl(this);
         }
         return _grammarDao;
+      }
+    }
+  }
+
+  @Override
+  public ListeningDao listeningDao() {
+    if (_listeningDao != null) {
+      return _listeningDao;
+    } else {
+      synchronized(this) {
+        if(_listeningDao == null) {
+          _listeningDao = new ListeningDao_Impl(this);
+        }
+        return _listeningDao;
       }
     }
   }

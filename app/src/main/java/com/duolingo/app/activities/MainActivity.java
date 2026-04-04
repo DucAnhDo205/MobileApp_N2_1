@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.duolingo.app.R;
 import com.duolingo.app.adapter.StudyModuleAdapter;
 import com.duolingo.app.models.GrammarQuestion;
+import com.duolingo.app.models.ListeningQuestion;
 import com.duolingo.app.models.StudyModule;
 import com.duolingo.app.models.User;
 import com.duolingo.app.persistence.CSVHelper;
@@ -57,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
         initializeGrammarData();
 
         loadGrammarQuestionsFromCSV();
+
+        loadListeningQuestionsFromCSV();
     }
 
     // Luồng móc nối dữ liệu thực tế từ Database
@@ -105,6 +108,10 @@ public class MainActivity extends AppCompatActivity {
             // Giả sử id của module ngữ pháp là "grammar"
             if (module.getId().equals("grammar")) {
                 Intent intent = new Intent(MainActivity.this, GrammarListActivity.class);
+                startActivity(intent);
+            }
+            else if (module.getId().equals("listening")) {
+                Intent intent = new Intent(MainActivity.this, ListeningListActivity.class);
                 startActivity(intent);
             }
         });
@@ -174,6 +181,56 @@ public class MainActivity extends AppCompatActivity {
                     runOnUiThread(() -> android.widget.Toast.makeText(MainActivity.this,
                             "Lỗi đọc file CSV: " + e.getMessage(),
                             android.widget.Toast.LENGTH_LONG).show());
+                }
+            }
+        });
+    }
+    private void loadListeningQuestionsFromCSV() {
+        VocaVerseDatabase db = VocaVerseDatabase.getDatabase(this);
+        VocaVerseDatabase.databaseWriteExecutor.execute(() -> {
+            if (db.listeningDao().getListeningCount() == 0) {
+                try {
+                    java.io.InputStream is = getAssets().open("listening_questions.csv");
+                    java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(is));
+                    String line;
+                    reader.readLine(); // Bỏ qua tiêu đề
+                    List<ListeningQuestion> bulkInsertList = new ArrayList<>();
+                    int rowCount = 1;
+
+                    while ((line = reader.readLine()) != null) {
+                        rowCount++;
+                        String[] parts = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
+
+                        if (parts.length >= 27) {
+                            ListeningQuestion q = new ListeningQuestion();
+                            // FIX LỖI BOM: Xóa bỏ các ký tự tàng hình UTF-8 ở đầu file
+                            q.level = parts[0].replace("\"", "").replace("\uFEFF", "").trim();
+                            q.audioFile = parts[1].replace("\"", "").trim();
+                            q.transcript = parts[2].replace("\"", "").trim();
+
+                            q.q1Text = parts[3].replace("\"", "").trim(); q.q1A = parts[4].replace("\"", "").trim(); q.q1B = parts[5].replace("\"", "").trim(); q.q1C = parts[6].replace("\"", "").trim(); q.q1D = parts[7].replace("\"", "").trim(); q.q1Correct = parts[8].replace("\"", "").trim();
+                            q.q2Text = parts[9].replace("\"", "").trim(); q.q2A = parts[10].replace("\"", "").trim(); q.q2B = parts[11].replace("\"", "").trim(); q.q2C = parts[12].replace("\"", "").trim(); q.q2D = parts[13].replace("\"", "").trim(); q.q2Correct = parts[14].replace("\"", "").trim();
+                            q.q3Text = parts[15].replace("\"", "").trim(); q.q3A = parts[16].replace("\"", "").trim(); q.q3B = parts[17].replace("\"", "").trim(); q.q3C = parts[18].replace("\"", "").trim(); q.q3D = parts[19].replace("\"", "").trim(); q.q3Correct = parts[20].replace("\"", "").trim();
+                            q.q4Text = parts[21].replace("\"", "").trim(); q.q4A = parts[22].replace("\"", "").trim(); q.q4B = parts[23].replace("\"", "").trim(); q.q4C = parts[24].replace("\"", "").trim(); q.q4D = parts[25].replace("\"", "").trim(); q.q4Correct = parts[26].replace("\"", "").trim();
+
+                            bulkInsertList.add(q);
+                        } else {
+                            // In ra log đỏ để báo lỗi thiếu cột
+                            android.util.Log.e("CSV_ERROR", "Dòng " + rowCount + " bị thiếu cột! Chỉ có " + parts.length + " cột.");
+                        }
+                    }
+                    reader.close();
+
+                    if (!bulkInsertList.isEmpty()) {
+                        db.listeningDao().insertAll(bulkInsertList);
+                        runOnUiThread(() -> android.widget.Toast.makeText(MainActivity.this, "Đã nạp " + bulkInsertList.size() + " bài Nghe hiểu!", android.widget.Toast.LENGTH_LONG).show());
+                    } else {
+                        runOnUiThread(() -> android.widget.Toast.makeText(MainActivity.this, "File CSV trống hoặc sai định dạng!", android.widget.Toast.LENGTH_LONG).show());
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    runOnUiThread(() -> android.widget.Toast.makeText(MainActivity.this, "Lỗi đọc file: " + e.getMessage(), android.widget.Toast.LENGTH_LONG).show());
                 }
             }
         });

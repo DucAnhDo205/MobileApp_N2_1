@@ -170,7 +170,7 @@
                             android:layout_height="24dp"
                             android:layout_gravity="center"
                             android:src="@drawable/ic_pen"
-                            app:tint="#2196F3"/> <!-- Tạm thời dùng lửa màu xanh, em thay icon Ngữ pháp vào sau -->
+                            app:tint="#2196F3"/>
                     </androidx.cardview.widget.CardView>
 
                     <!-- Thông tin chi tiết -->
