@@ -12,6 +12,7 @@ import com.duolingo.app.R;
 import com.duolingo.app.adapter.StudyModuleAdapter;
 import com.duolingo.app.models.GrammarQuestion;
 import com.duolingo.app.models.ListeningQuestion;
+import com.duolingo.app.models.PronunciationQuestion;
 import com.duolingo.app.models.StudyModule;
 import com.duolingo.app.models.User;
 import com.duolingo.app.persistence.CSVHelper;
@@ -60,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
         loadGrammarQuestionsFromCSV();
 
         loadListeningQuestionsFromCSV();
+
+        loadPronunciationQuestionsFromCSV();
     }
 
     // Luồng móc nối dữ liệu thực tế từ Database
@@ -235,6 +238,43 @@ public class MainActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                     runOnUiThread(() -> android.widget.Toast.makeText(MainActivity.this, "Lỗi đọc file: " + e.getMessage(), android.widget.Toast.LENGTH_LONG).show());
+                }
+            }
+        });
+    }
+    private void loadPronunciationQuestionsFromCSV() {
+        VocaVerseDatabase db = VocaVerseDatabase.getDatabase(this);
+        VocaVerseDatabase.databaseWriteExecutor.execute(() -> {
+            // Kiểm tra xem kho đã có dữ liệu chưa
+            if (db.pronunciationDao().getCount() == 0) {
+                try {
+                    java.io.InputStream is = getAssets().open("pronunciation_questions.csv");
+                    java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(is));
+                    String line;
+                    reader.readLine(); // Bỏ qua dòng tiêu đề
+
+                    List<PronunciationQuestion> bulkList = new ArrayList<>();
+
+                    while ((line = reader.readLine()) != null) {
+                        // Regex thần thánh để tách dấu phẩy trong ngoặc kép
+                        String[] parts = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)");
+
+                        if (parts.length >= 2) {
+                            String lessonId = parts[0].replace("\"", "").trim();
+                            String transcript = parts[1].replace("\"", "").trim();
+
+                            bulkList.add(new PronunciationQuestion(lessonId, transcript));
+                        }
+                    }
+                    reader.close();
+
+                    if (!bulkList.isEmpty()) {
+                        db.pronunciationDao().insertAll(bulkList);
+                        runOnUiThread(() -> Toast.makeText(MainActivity.this,
+                                "Nạp xong " + bulkList.size() + " câu luyện phát âm!", Toast.LENGTH_SHORT).show());
+                    }
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
         });

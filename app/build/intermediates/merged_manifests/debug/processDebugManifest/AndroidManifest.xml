@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <permission
         android:name="com.duolingo.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
@@ -53,6 +54,7 @@
         <activity android:name="com.duolingo.app.activities.ListeningListActivity" />
         <activity android:name="com.duolingo.app.activities.ListeningActivity" />
         <activity android:name="com.duolingo.app.activities.PronunciationListActivity" />
+        <activity android:name="com.duolingo.app.activities.PronunciationActivity" />
         <activity
             android:name="com.duolingo.app.activities.FlashcardActivity"
             android:label="Flashcards" />
