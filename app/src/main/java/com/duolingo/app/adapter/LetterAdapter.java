@@ -37,12 +37,10 @@ public class LetterAdapter extends RecyclerView.Adapter<LetterAdapter.ViewHolder
 
         // Hiệu ứng: Nếu đã chọn thì mờ đi và không thể bấm
         if (item.isSelected()) {
-            holder.itemView.animate().alpha(0f).setDuration(200).withEndAction(() ->
-                    holder.itemView.setVisibility(View.INVISIBLE)).start();
+            holder.itemView.setVisibility(View.INVISIBLE);
             holder.itemView.setClickable(false);
         } else {
             holder.itemView.setVisibility(View.VISIBLE);
-            holder.itemView.setAlpha(1.0f);
             holder.itemView.setClickable(true);
         }
 

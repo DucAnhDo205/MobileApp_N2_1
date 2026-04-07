@@ -52,7 +52,7 @@
             android:layout_height="6dp"
             android:layout_weight="1"
             android:max="10"
-            android:progress="3"
+            android:progress="0"
             android:progressDrawable="@drawable/custom_progress_bar" />
 
         <TextView
@@ -60,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="14dp"
-            android:text="3/10"
+            android:text="0/10"
             android:textColor="#4CAF50"
             android:textSize="13sp"
             android:textStyle="bold" />
