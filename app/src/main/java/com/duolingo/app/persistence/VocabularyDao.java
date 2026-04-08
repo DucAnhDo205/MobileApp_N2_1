@@ -44,4 +44,10 @@ public interface VocabularyDao {
 
     @Query("SELECT * FROM vocabulary_table WHERE nextReviewDate <= :currentDate ORDER BY nextReviewDate ASC")
     LiveData<List<VocabularyItem>> getDueVocabulary(long currentDate);
+
+    @Query("SELECT * FROM vocabulary_table ORDER BY RANDOM() LIMIT :limit")
+    List<VocabularyItem> getRandomVocabulary(int limit);
+
+    @Query("SELECT * FROM vocabulary_table WHERE lessonNumber = :lessonNum ORDER BY RANDOM() LIMIT 1")
+    VocabularyItem getRandomVocabFromLesson(int lessonNum);
 }

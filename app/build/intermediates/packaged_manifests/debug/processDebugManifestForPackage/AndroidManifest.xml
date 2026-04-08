@@ -33,7 +33,7 @@
         android:theme="@style/Theme.DuolingoApp"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name="com.duolingo.app.activities.OnboardingActivity"
+            android:name="com.duolingo.app.activities.LoginActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,12 +41,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.duolingo.app.activities.LoginActivity" />
+        <activity
+            android:name="com.duolingo.app.activities.OnboardingActivity"
+            android:exported="false" />
+        <activity android:name="com.duolingo.app.activities.MainActivity" />
         <activity android:name="com.duolingo.app.activities.RegisterActivity" />
         <activity android:name="com.duolingo.app.activities.LanguageSelectionActivity" />
         <activity android:name="com.duolingo.app.activities.SetupGoalActivity" />
         <activity android:name="com.duolingo.app.activities.StudyPlanActivity" />
-        <activity android:name="com.duolingo.app.activities.MainActivity" />
+        <activity android:name="com.duolingo.app.activities.GameMenuActivity" />
+        <activity android:name="com.duolingo.app.activities.GhepTuActivity" />
+        <activity android:name="com.duolingo.app.activities.ScrambleGameActivity" />
+        <activity
+            android:name="com.duolingo.app.activities.QuizGameActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name="com.duolingo.app.activities.MemoryGameActivity" />
+        <activity
+            android:name="com.duolingo.app.activities.ComprehensiveExamActivity"
+            android:exported="false" />
+        <activity android:name="com.duolingo.app.activities.ExamSelectionActivity" />
+        <activity android:name="com.duolingo.app.activities.ProfileActivity" />
+        <activity
+            android:name="com.duolingo.app.activities.EditProfileActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.duolingo.app.activities.FlashcardActivity"
             android:label="Flashcards" />

@@ -3,6 +3,7 @@ package com.duolingo.app.persistence;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.duolingo.app.models.User;
 
@@ -24,4 +25,7 @@ public interface UserDao {
     // Kiểm tra xem Email hoặc Username đã tồn tại chưa
     @Query("SELECT EXISTS(SELECT * FROM users WHERE email = :email OR username = :username)")
     boolean isUserExists(String email, String username);
+
+    @Update
+    void update(User user);
 }

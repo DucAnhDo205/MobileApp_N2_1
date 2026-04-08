@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FA">
+
+    <include
+        android:id="@+id/header_scramble"
+        layout="@layout/header_game_layout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/stats_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="12dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/header_scramble">
+
+        <TextView
+            android:id="@+id/tv_question_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CÂU 1/10"
+            android:textColor="#757575"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.05" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_correct_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_instruction_label"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp"
+            android:text="Đúng: 0"
+            android:textColor="#4CAF50"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="4dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="#F0F0F0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/stats_row">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SẮP XẾP CÁC CHỮ CÁI"
+                android:textColor="#BDBDBD"
+                android:textSize="11sp"
+                android:letterSpacing="0.2"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_scrambled_word"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="8dp"
+                android:background="#F5F7FA"
+                android:gravity="center"
+                android:letterSpacing="0.3"
+                android:textColor="#212121"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginVertical="12dp"
+                android:src="@drawable/ic_shuffle"
+                app:tint="#D1D1D1" />
+
+            <TextView
+                android:id="@+id/tv_user_answer"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@drawable/bg_answer_box"
+                android:gravity="center"
+                android:hint="Chạm chữ cái..."
+                android:textColor="#3F51B5"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_letters"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:overScrollMode="never" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="12dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_clear"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="Xoá"
+                    android:textColor="#D32F2F"
+                    android:textStyle="bold"
+                    app:strokeColor="#D32F2F"
+                    app:strokeWidth="1.5dp"
+                    app:cornerRadius="16dp"
+                    app:icon="@drawable/ic_delete"
+                    app:iconTint="#D32F2F" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_hint"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="54dp"
+                    android:layout_weight="1"
+                    android:text="Gợi ý"
+                    android:textColor="#FFA000"
+                    android:textStyle="bold"
+                    app:strokeColor="#FFA000"
+                    app:strokeWidth="1.5dp"
+                    app:cornerRadius="16dp"
+                    app:icon="@drawable/ic_hint"
+                    app:iconTint="#FFA000" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_check"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="KIỂM TRA"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:backgroundTint="#4CAF50"
+                app:cornerRadius="18dp"
+                app:elevation="2dp" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

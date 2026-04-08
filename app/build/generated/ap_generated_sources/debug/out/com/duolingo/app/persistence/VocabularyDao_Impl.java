@@ -629,6 +629,158 @@ public final class VocabularyDao_Impl implements VocabularyDao {
     });
   }
 
+  @Override
+  public List<VocabularyItem> getRandomVocabulary(final int limit) {
+    final String _sql = "SELECT * FROM vocabulary_table ORDER BY RANDOM() LIMIT ?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    _statement.bindLong(_argIndex, limit);
+    __db.assertNotSuspendingTransaction();
+    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+    try {
+      final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+      final int _cursorIndexOfWord = CursorUtil.getColumnIndexOrThrow(_cursor, "word");
+      final int _cursorIndexOfMeaning = CursorUtil.getColumnIndexOrThrow(_cursor, "meaning");
+      final int _cursorIndexOfExample = CursorUtil.getColumnIndexOrThrow(_cursor, "example");
+      final int _cursorIndexOfLanguage = CursorUtil.getColumnIndexOrThrow(_cursor, "language");
+      final int _cursorIndexOfCategory = CursorUtil.getColumnIndexOrThrow(_cursor, "category");
+      final int _cursorIndexOfLessonNumber = CursorUtil.getColumnIndexOrThrow(_cursor, "lessonNumber");
+      final int _cursorIndexOfNextReviewDate = CursorUtil.getColumnIndexOrThrow(_cursor, "nextReviewDate");
+      final int _cursorIndexOfInterval = CursorUtil.getColumnIndexOrThrow(_cursor, "interval");
+      final int _cursorIndexOfEaseFactor = CursorUtil.getColumnIndexOrThrow(_cursor, "easeFactor");
+      final List<VocabularyItem> _result = new ArrayList<VocabularyItem>(_cursor.getCount());
+      while (_cursor.moveToNext()) {
+        final VocabularyItem _item;
+        final String _tmpWord;
+        if (_cursor.isNull(_cursorIndexOfWord)) {
+          _tmpWord = null;
+        } else {
+          _tmpWord = _cursor.getString(_cursorIndexOfWord);
+        }
+        final String _tmpMeaning;
+        if (_cursor.isNull(_cursorIndexOfMeaning)) {
+          _tmpMeaning = null;
+        } else {
+          _tmpMeaning = _cursor.getString(_cursorIndexOfMeaning);
+        }
+        final String _tmpExample;
+        if (_cursor.isNull(_cursorIndexOfExample)) {
+          _tmpExample = null;
+        } else {
+          _tmpExample = _cursor.getString(_cursorIndexOfExample);
+        }
+        final String _tmpLanguage;
+        if (_cursor.isNull(_cursorIndexOfLanguage)) {
+          _tmpLanguage = null;
+        } else {
+          _tmpLanguage = _cursor.getString(_cursorIndexOfLanguage);
+        }
+        final String _tmpCategory;
+        if (_cursor.isNull(_cursorIndexOfCategory)) {
+          _tmpCategory = null;
+        } else {
+          _tmpCategory = _cursor.getString(_cursorIndexOfCategory);
+        }
+        final int _tmpLessonNumber;
+        _tmpLessonNumber = _cursor.getInt(_cursorIndexOfLessonNumber);
+        _item = new VocabularyItem(_tmpWord,_tmpMeaning,_tmpExample,_tmpLanguage,_tmpCategory,_tmpLessonNumber);
+        final int _tmpId;
+        _tmpId = _cursor.getInt(_cursorIndexOfId);
+        _item.setId(_tmpId);
+        final long _tmpNextReviewDate;
+        _tmpNextReviewDate = _cursor.getLong(_cursorIndexOfNextReviewDate);
+        _item.setNextReviewDate(_tmpNextReviewDate);
+        final int _tmpInterval;
+        _tmpInterval = _cursor.getInt(_cursorIndexOfInterval);
+        _item.setInterval(_tmpInterval);
+        final double _tmpEaseFactor;
+        _tmpEaseFactor = _cursor.getDouble(_cursorIndexOfEaseFactor);
+        _item.setEaseFactor(_tmpEaseFactor);
+        _result.add(_item);
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
+
+  @Override
+  public VocabularyItem getRandomVocabFromLesson(final int lessonNum) {
+    final String _sql = "SELECT * FROM vocabulary_table WHERE lessonNumber = ? ORDER BY RANDOM() LIMIT 1";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
+    int _argIndex = 1;
+    _statement.bindLong(_argIndex, lessonNum);
+    __db.assertNotSuspendingTransaction();
+    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+    try {
+      final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+      final int _cursorIndexOfWord = CursorUtil.getColumnIndexOrThrow(_cursor, "word");
+      final int _cursorIndexOfMeaning = CursorUtil.getColumnIndexOrThrow(_cursor, "meaning");
+      final int _cursorIndexOfExample = CursorUtil.getColumnIndexOrThrow(_cursor, "example");
+      final int _cursorIndexOfLanguage = CursorUtil.getColumnIndexOrThrow(_cursor, "language");
+      final int _cursorIndexOfCategory = CursorUtil.getColumnIndexOrThrow(_cursor, "category");
+      final int _cursorIndexOfLessonNumber = CursorUtil.getColumnIndexOrThrow(_cursor, "lessonNumber");
+      final int _cursorIndexOfNextReviewDate = CursorUtil.getColumnIndexOrThrow(_cursor, "nextReviewDate");
+      final int _cursorIndexOfInterval = CursorUtil.getColumnIndexOrThrow(_cursor, "interval");
+      final int _cursorIndexOfEaseFactor = CursorUtil.getColumnIndexOrThrow(_cursor, "easeFactor");
+      final VocabularyItem _result;
+      if (_cursor.moveToFirst()) {
+        final String _tmpWord;
+        if (_cursor.isNull(_cursorIndexOfWord)) {
+          _tmpWord = null;
+        } else {
+          _tmpWord = _cursor.getString(_cursorIndexOfWord);
+        }
+        final String _tmpMeaning;
+        if (_cursor.isNull(_cursorIndexOfMeaning)) {
+          _tmpMeaning = null;
+        } else {
+          _tmpMeaning = _cursor.getString(_cursorIndexOfMeaning);
+        }
+        final String _tmpExample;
+        if (_cursor.isNull(_cursorIndexOfExample)) {
+          _tmpExample = null;
+        } else {
+          _tmpExample = _cursor.getString(_cursorIndexOfExample);
+        }
+        final String _tmpLanguage;
+        if (_cursor.isNull(_cursorIndexOfLanguage)) {
+          _tmpLanguage = null;
+        } else {
+          _tmpLanguage = _cursor.getString(_cursorIndexOfLanguage);
+        }
+        final String _tmpCategory;
+        if (_cursor.isNull(_cursorIndexOfCategory)) {
+          _tmpCategory = null;
+        } else {
+          _tmpCategory = _cursor.getString(_cursorIndexOfCategory);
+        }
+        final int _tmpLessonNumber;
+        _tmpLessonNumber = _cursor.getInt(_cursorIndexOfLessonNumber);
+        _result = new VocabularyItem(_tmpWord,_tmpMeaning,_tmpExample,_tmpLanguage,_tmpCategory,_tmpLessonNumber);
+        final int _tmpId;
+        _tmpId = _cursor.getInt(_cursorIndexOfId);
+        _result.setId(_tmpId);
+        final long _tmpNextReviewDate;
+        _tmpNextReviewDate = _cursor.getLong(_cursorIndexOfNextReviewDate);
+        _result.setNextReviewDate(_tmpNextReviewDate);
+        final int _tmpInterval;
+        _tmpInterval = _cursor.getInt(_cursorIndexOfInterval);
+        _result.setInterval(_tmpInterval);
+        final double _tmpEaseFactor;
+        _tmpEaseFactor = _cursor.getDouble(_cursorIndexOfEaseFactor);
+        _result.setEaseFactor(_tmpEaseFactor);
+      } else {
+        _result = null;
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
+
   @NonNull
   public static List<Class<?>> getRequiredConverters() {
     return Collections.emptyList();
